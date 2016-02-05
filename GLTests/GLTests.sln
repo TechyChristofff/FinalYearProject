@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GLTests", "GLTests\GLTests.vcxproj", "{13C545C5-3456-40B1-8A0C-B4701772BDDE}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SphCPU2D", "SphCPU2D\SphCPU2D.vcxproj", "{4B1BE0A8-AD86-4330-A964-3ED1AA18B3F0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{13C545C5-3456-40B1-8A0C-B4701772BDDE}.Debug|Win32.ActiveCfg = Debug|Win32
+		{13C545C5-3456-40B1-8A0C-B4701772BDDE}.Debug|Win32.Build.0 = Debug|Win32
+		{13C545C5-3456-40B1-8A0C-B4701772BDDE}.Release|Win32.ActiveCfg = Release|Win32
+		{13C545C5-3456-40B1-8A0C-B4701772BDDE}.Release|Win32.Build.0 = Release|Win32
+		{4B1BE0A8-AD86-4330-A964-3ED1AA18B3F0}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4B1BE0A8-AD86-4330-A964-3ED1AA18B3F0}.Debug|Win32.Build.0 = Debug|Win32
+		{4B1BE0A8-AD86-4330-A964-3ED1AA18B3F0}.Release|Win32.ActiveCfg = Release|Win32
+		{4B1BE0A8-AD86-4330-A964-3ED1AA18B3F0}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

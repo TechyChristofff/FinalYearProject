@@ -1,0 +1,25 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{852EF133-D8CF-9EDC-74FC-8649B09FACC5}") = "FluidSimulatorProject", "Assembly-CSharp.csproj", "{BC5A8546-0FB0-2FAF-5196-BBCE507B59DB}"
+EndProject
+Project("{852EF133-D8CF-9EDC-74FC-8649B09FACC5}") = "FluidSimulatorProject", "Assembly-CSharp-Editor.csproj", "{EE439EDE-27D7-AA58-B05C-DBFA3EDFA271}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BC5A8546-0FB0-2FAF-5196-BBCE507B59DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC5A8546-0FB0-2FAF-5196-BBCE507B59DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC5A8546-0FB0-2FAF-5196-BBCE507B59DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC5A8546-0FB0-2FAF-5196-BBCE507B59DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE439EDE-27D7-AA58-B05C-DBFA3EDFA271}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE439EDE-27D7-AA58-B05C-DBFA3EDFA271}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE439EDE-27D7-AA58-B05C-DBFA3EDFA271}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE439EDE-27D7-AA58-B05C-DBFA3EDFA271}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
