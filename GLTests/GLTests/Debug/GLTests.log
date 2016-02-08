@@ -1,9 +1,9 @@
-﻿Build started 04/02/2016 16:15:19.
-     1>Project "Y:\Documents\FinalYearProject\GLTests\GLTests\GLTests\GLTests.vcxproj" on node 2 (Build target(s)).
+﻿Build started 06/02/2016 03:41:58.
+     1>Project "E:\Documents\GitHub\FinalYearProject\GLTests\GLTests\GLTests.vcxproj" on node 2 (Build target(s)).
      1>Link:
-         GLTests.vcxproj -> Y:\Documents\FinalYearProject\GLTests\GLTests\Debug\GLTests.exe
-     1>Done Building Project "Y:\Documents\FinalYearProject\GLTests\GLTests\GLTests\GLTests.vcxproj" (Build target(s)).
+         GLTests.vcxproj -> E:\Documents\GitHub\FinalYearProject\GLTests\Debug\GLTests.exe
+     1>Done Building Project "E:\Documents\GitHub\FinalYearProject\GLTests\GLTests\GLTests.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.22
+Time Elapsed 00:00:00.13
