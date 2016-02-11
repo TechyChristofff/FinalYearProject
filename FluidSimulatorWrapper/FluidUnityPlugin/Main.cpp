@@ -40,6 +40,109 @@ extern "C" EXPORT_API SPHSystem* InitOpenSPHSystem()
     return newSph;
 }
 
+extern "C" EXPORT_API bool InitInternalSystem()
+{
+    sph = new SPHSystem();
+    sph->init_system();
+    
+    if (sph != nullptr && sph->sys_running == 0) {
+        return true;
+    }else
+    {
+        return false;
+    }
+}
+
+extern "C" EXPORT_API void GetInternalPoints(float* arrayin, int height, int width)
+{
+    sim_ratio.x=real_world_side.x/sph->world_size.x;
+    sim_ratio.y=real_world_side.y/sph->world_size.y;
+    sim_ratio.z=real_world_side.z/sph->world_size.z;
+    
+    Particle *p;
+    for (int i = 0; i<height; i++) {
+        p = &(sph->mem[i]);
+        
+        arrayin[i*width] = p->pos.x * sim_ratio.x + real_world_origin.x;
+        arrayin[i*width +1] = p->pos.y * sim_ratio.y + real_world_origin.y;
+        arrayin[i*width +2] = p->pos.z * sim_ratio.z + real_world_origin.z;
+        
+        char* tmpx;
+        sprintf(tmpx, "%f",p->pos.x * sim_ratio.x + real_world_origin.x);
+        
+        char* tmpy;
+        sprintf(tmpy, "%f",p->pos.y * sim_ratio.y + real_world_origin.y);
+        
+        char* tmpz;
+        sprintf(tmpz, "%f",p->pos.z * sim_ratio.z + real_world_origin.z);
+        
+        sph->send_callback(tmpx);
+        sph->send_callback(tmpy);
+        sph->send_callback(tmpz);
+
+    }
+    
+}
+
+extern "C" EXPORT_API float GetInternalPoint(int id, int direction)
+{
+    float value = 0;
+    if (id < sph->num_particle) {
+        Particle *p = &(sph->mem[id]);
+        switch (direction) {
+            case 0:
+                value = p->pos.x * sim_ratio.x + real_world_origin.x;
+                break;
+            case 1:
+                value = p->pos.y * sim_ratio.y + real_world_origin.y;
+                break;
+            case 2:
+                value = p->pos.z * sim_ratio.z + real_world_origin.z;
+                break;
+            default:
+                value = 0;
+                break;
+        }
+    }
+    
+    char* tmp;
+    sprintf(tmp, "%f",value);
+    
+    sph->send_callback(tmp);
+    
+    return value;
+    
+}
+
+extern "C" EXPORT_API void InternalAnimate()
+{
+    sph->animation();
+}
+
+extern "C" EXPORT_API void InternalDispose()
+{
+    if (sph != NULL)
+    {
+        delete sph;
+        sph = NULL;
+    }
+}
+
+extern "C" EXPORT_API int GetInternalLength()
+{
+    return (int)sph->num_particle;
+}
+
+extern "C" EXPORT_API void InternalStartRunning()
+{
+    sph->sys_running=1-sph->sys_running;
+}
+
+extern "C" EXPORT_API int InternalRunningState()
+{
+    return sph->sys_running;
+}
+
 extern "C" EXPORT_API void DisposeSPHSystem(SPHSystem* pObject)
 {
 	if (pObject != NULL)
@@ -104,6 +207,7 @@ extern "C" EXPORT_API void GetPoints(SPHSystem* pObject, float* arrayin, int hei
         
     }
 }
+
 
 extern "C" EXPORT_API void ChangePoints(SPHSystem* pObject, double* arrayin, int height, int width)
 {

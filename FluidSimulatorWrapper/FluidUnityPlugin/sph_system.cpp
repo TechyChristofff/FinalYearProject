@@ -3,6 +3,20 @@
 #include "sph_system.h"
 #include "sph_header.h"
 
+typedef void (*FuncPtr)( const char * );
+
+FuncPtr Debug;
+
+extern "C" EXPORT_API void SetDebugFunction( FuncPtr fp )
+{
+    Debug = fp;
+}
+
+void SPHSystem::send_callback(const char *message)
+{
+    Debug(message);
+}
+
 SPHSystem::SPHSystem()
 {
 	max_particle=30000;
@@ -129,6 +143,7 @@ void SPHSystem::init_system()
 			for(pos.z=world_size.z*0.0f; pos.z<world_size.z*0.6f; pos.z+=(kernel*0.5f))
 			{
 				add_particle(pos, vel);
+                //Debug("Particle Added");
 			}
 		}
 	}

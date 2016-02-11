@@ -69,6 +69,7 @@ public:
 	void init_system();
     void init_limited_system();
 	void add_particle(float3 pos, float3 vel);
+    void send_callback(const char* message);
 
 private:
 	void build_table();

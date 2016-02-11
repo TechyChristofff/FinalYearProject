@@ -1,9 +1,15 @@
-﻿Build started 04/02/2016 16:15:19.
-     1>Project "Y:\Documents\FinalYearProject\GLTests\GLTests\GLTests\GLTests.vcxproj" on node 2 (Build target(s)).
-     1>Link:
-         GLTests.vcxproj -> Y:\Documents\FinalYearProject\GLTests\GLTests\Debug\GLTests.exe
-     1>Done Building Project "Y:\Documents\FinalYearProject\GLTests\GLTests\GLTests\GLTests.vcxproj" (Build target(s)).
+﻿Build started 11/02/2016 15:17:47.
+     1>Project "Y:\Documents\FinalYearProject\FinalYearProject\GLTests\GLTests\GLTests.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IY:\Documents\FinalYearProject\FinalYearProject\GLTests\packages\nupengl.core.0.1.0.1\build\native\../..//build/native/include/ /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\..\sphfluid\SPH_CPU_3D_v1\sph_system.cpp
+         sph_system.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"Y:\Documents\FinalYearProject\FinalYearProject\GLTests\Debug\GLTests.exe" /INCREMENTAL /NOLOGO Y:\Documents\FinalYearProject\FinalYearProject\GLTests\packages\nupengl.core.0.1.0.1\build\native\../..//build/native/lib/Win32\glew32.lib Y:\Documents\FinalYearProject\FinalYearProject\GLTests\packages\nupengl.core.0.1.0.1\build\native\../..//build/native/lib/Win32\glfw3dll.lib Y:\Documents\FinalYearProject\FinalYearProject\GLTests\packages\nupengl.core.0.1.0.1\build\native\../..//build/native/lib/Win32\freeglut.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"Y:\Documents\FinalYearProject\FinalYearProject\GLTests\Debug\GLTests.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"Y:\Documents\FinalYearProject\FinalYearProject\GLTests\Debug\GLTests.lib" /MACHINE:X86 Debug\sph_main.obj
+         Debug\sph_system.obj
+         Debug\sph_timer.obj
+         GLTests.vcxproj -> Y:\Documents\FinalYearProject\FinalYearProject\GLTests\Debug\GLTests.exe
+     1>Done Building Project "Y:\Documents\FinalYearProject\FinalYearProject\GLTests\GLTests\GLTests.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.22
+Time Elapsed 00:00:00.77

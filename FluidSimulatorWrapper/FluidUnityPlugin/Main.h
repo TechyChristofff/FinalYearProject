@@ -1,4 +1,4 @@
-#pragma once
+/*#pragma once
 
 #if UNITY_METRO
 #define EXPORT_API __declspec(dllexport) __stdcall
@@ -6,4 +6,4 @@
 #define EXPORT_API __declspec(dllexport)
 #else
 #define EXPORT_API
-#endif
+#endif*/
