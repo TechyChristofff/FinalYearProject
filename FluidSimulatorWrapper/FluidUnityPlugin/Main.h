@@ -1,6 +1,6 @@
 /*#pragma once
 
-#if UNITY_METRO
+#if UNITY_EDITOR || UNITY_STANDALONE
 #define EXPORT_API __declspec(dllexport) __stdcall
 #elif UNITY_WIN
 #define EXPORT_API __declspec(dllexport)

@@ -1,2 +1,6 @@
 #TargetFrameworkVersion=v4.0:PlatformToolSet=v120:EnableManagedIncrementalBuild=false:VCToolArchitecture=Native32Bit
+<<<<<<< HEAD
 Debug|Win32|Y:\Documents\FinalYearProject\FinalYearProject\GLTests\|
+=======
+Debug|Win32|E:\Documents\GitHub\FinalYearProject\GLTests\|
+>>>>>>> origin/master
