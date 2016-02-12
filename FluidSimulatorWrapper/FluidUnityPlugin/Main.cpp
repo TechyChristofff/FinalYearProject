@@ -42,7 +42,18 @@ extern "C" EXPORT_API SPHSystem* InitOpenSPHSystem()
 
 extern "C" EXPORT_API bool InitInternalSystem()
 {
+    real_world_origin.x=-10.0f;
+    real_world_origin.y=-10.0f;
+    real_world_origin.z=-10.0f;
+    
+    real_world_side.x=20.0f;
+    real_world_side.y=20.0f;
+    real_world_side.z=20.0f;
+    
+
+    
     sph = new SPHSystem();
+    sph->send_callback("system init called");
     sph->init_system();
     
     if (sph != nullptr && sph->sys_running == 0) {
@@ -59,7 +70,9 @@ extern "C" EXPORT_API void GetInternalPoints(float* arrayin, int height, int wid
     sim_ratio.y=real_world_side.y/sph->world_size.y;
     sim_ratio.z=real_world_side.z/sph->world_size.z;
     
-    Particle *p;
+    //sph->send_callback("Sart data return");
+    
+    /*Particle *p;
     for (int i = 0; i<height; i++) {
         p = &(sph->mem[i]);
         
@@ -67,25 +80,27 @@ extern "C" EXPORT_API void GetInternalPoints(float* arrayin, int height, int wid
         arrayin[i*width +1] = p->pos.y * sim_ratio.y + real_world_origin.y;
         arrayin[i*width +2] = p->pos.z * sim_ratio.z + real_world_origin.z;
         
-        char* tmpx;
-        sprintf(tmpx, "%f",p->pos.x * sim_ratio.x + real_world_origin.x);
+    }*/
+    
+    for (int i = 0; i<height; i++) {
         
-        char* tmpy;
-        sprintf(tmpy, "%f",p->pos.y * sim_ratio.y + real_world_origin.y);
+        arrayin[i*width] = sph->mem[i].pos.x * sim_ratio.x + real_world_origin.x;
+        arrayin[i*width +1] = sph->mem[i].pos.y * sim_ratio.y + real_world_origin.y;
+        arrayin[i*width +2] = sph->mem[i].pos.z * sim_ratio.z + real_world_origin.z;
         
-        char* tmpz;
-        sprintf(tmpz, "%f",p->pos.z * sim_ratio.z + real_world_origin.z);
-        
-        sph->send_callback(tmpx);
-        sph->send_callback(tmpy);
-        sph->send_callback(tmpz);
-
     }
+
+
+    //sph->send_callback("Look I am being called");
     
 }
 
 extern "C" EXPORT_API float GetInternalPoint(int id, int direction)
 {
+    sim_ratio.x=real_world_side.x/sph->world_size.x;
+    sim_ratio.y=real_world_side.y/sph->world_size.y;
+    sim_ratio.z=real_world_side.z/sph->world_size.z;
+    
     float value = 0;
     if (id < sph->num_particle) {
         Particle *p = &(sph->mem[id]);
@@ -104,11 +119,6 @@ extern "C" EXPORT_API float GetInternalPoint(int id, int direction)
                 break;
         }
     }
-    
-    char* tmp;
-    sprintf(tmp, "%f",value);
-    
-    sph->send_callback(tmp);
     
     return value;
     

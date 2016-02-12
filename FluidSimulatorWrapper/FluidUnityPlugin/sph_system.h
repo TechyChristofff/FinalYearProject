@@ -4,6 +4,7 @@
 #define __SPHSYSTEM_H__
 
 #include "sph_type.h"
+#include <sstream>
 
 class Particle
 {
@@ -69,7 +70,8 @@ public:
 	void init_system();
     void init_limited_system();
 	void add_particle(float3 pos, float3 vel);
-    void send_callback(const char* message);
+    void send_callback(std::string message);
+    std::string float_conversion(float input);
 
 private:
 	void build_table();
