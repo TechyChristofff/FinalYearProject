@@ -48,7 +48,7 @@ SPHSystem::SPHSystem()
 
 	gravity.x=0.0f;
     send_callback("Gravity X = " + float_conversion(gravity.x));
-	gravity.y=-6.8f;
+	gravity.y=6.8f;
     send_callback("Gravity Y = " + float_conversion(gravity.y));
 	gravity.z=0.0f;
     send_callback("Gravity Z = " + float_conversion(gravity.z));
@@ -268,12 +268,12 @@ void SPHSystem::build_table()
             cell[hash]=p;
         }
     }
-    send_callback("build Table ended");
+    //send_callback("build Table ended");
 }
 
 void SPHSystem::comp_dens_pres()
 {
-    send_callback("dens started");
+    //send_callback("dens started");
     Particle *p;
     Particle *np;
     
@@ -506,7 +506,7 @@ void SPHSystem::advection()
     //send_callback("advection ended");
 }
 
-int3 SPHSystem::calc_cell_pos(float3 p)
+inline int3 SPHSystem::calc_cell_pos(float3 p)
 {
 	int3 cell_pos;
 	cell_pos.x = int(floor((p.x) / cell_size));
@@ -516,7 +516,7 @@ int3 SPHSystem::calc_cell_pos(float3 p)
     return cell_pos;
 }
 
-uint SPHSystem::calc_cell_hash(int3 cell_pos)
+inline uint SPHSystem::calc_cell_hash(int3 cell_pos)
 {
 	if(cell_pos.x<0 || cell_pos.x>=(int)grid_size.x || cell_pos.y<0 || cell_pos.y>=(int)grid_size.y || cell_pos.z<0 || cell_pos.z>=(int)grid_size.z)
 	{

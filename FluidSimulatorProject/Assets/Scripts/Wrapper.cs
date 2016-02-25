@@ -38,24 +38,20 @@ public class Wrapper : MonoBehaviour {
     private static extern float GetInternalPoint(int id, int direction);//Get a specific point (point number, 0=x, 1=Y,2=Z)
     
     #endregion 
-
-    IntPtr SPH_System;
-    
     public GameObject particle;
     
     float[,] Points;
     int pointCount;
-    Dictionary<int,GameObject> allParticles;
-    public int size = 500;
-    /*
-	[DllImport("FluidUnityPlugin", SetLastError = true)]
-	private static extern int[,] fillArray(int size);
-
-    */
+    //Dictionary<int,GameObject> allParticles;
+    List<GameObject> allParticles;
+    
+    Vector3 vec = new Vector3();
+    int width, height;
     
 	// Use this for initialization
 	void Start () {
-        
+         width = 0;
+         height = 0;
          MyDelegate callback_delegate = new MyDelegate( CallBackFunction );
  
         // Convert callback_delegate into a function pointer that can be
@@ -66,7 +62,8 @@ public class Wrapper : MonoBehaviour {
         // Call the API passing along the function pointer.
         SetDebugFunction( intptr_delegate );
         
-        allParticles = new Dictionary<int, GameObject>();
+        //allParticles = new Dictionary<int, GameObject>();
+        allParticles = new List<GameObject>();
         //SPH_System = InitOpenSPHSystem();
         bool test = InitInternalSystem();
         Debug.Log(test);
@@ -76,12 +73,10 @@ public class Wrapper : MonoBehaviour {
 		//ArrayFillTest();
         Points = new float[pointCount,3];
         //GetPoints(SPH_System, Points, Points.GetLength(0), Points.GetLength(1));
-        GetInternalPoints(Points,Points.GetLength(0), Points.GetLength(1) );
+        height = Points.GetLength(0);
+        width = Points.GetLength(1);
+        GetInternalPoints(Points,height, width );
         Debug.Log(Points[0,0].ToString());
-        foreach(double point in Points)
-        {
-            //Debug.Log(point.ToString());
-        }
         for(int i = 0; i < pointCount; i++)
         {
             UnityEngine.Object tmp = Instantiate(particle, new Vector3(Points[i,0],Points[i,1],Points[i,2]), Quaternion.identity);
@@ -90,26 +85,13 @@ public class Wrapper : MonoBehaviour {
                                                                         GetInternalPoint(i,2)), 
                                                                         Quaternion.identity);*/
             tmp.name = "Sphere" + i.ToString();
-            allParticles.Add(i,(GameObject)tmp);
+            //allParticles.Add(i,(GameObject)tmp);
+            allParticles.Add((GameObject)tmp);
         }
+        
+        
         Debug.Log("SPh state = " +InternalRunningState().ToString());
         InternalStartRunning();
-	}
-	
-	private void ArrayFillTest() {
-		var start = Time.realtimeSinceStartup;
-		
-		//int[,] tab = fillArray(size);
-		Debug.Log( (Time.realtimeSinceStartup-start).ToString("f6") + " secs");
-		
-		start = Time.realtimeSinceStartup;
-		int[,] array = new int[size,size];
-		for(int i = 0; i < size; i++) {
-			for(int j = 0; j < size; j++) {
-				array[i,j] = i * size + j;
-			}
-		}
-		Debug.Log( (Time.realtimeSinceStartup-start).ToString("f6") + " secs");
 	}
 	
 	// Update is called once per frame
@@ -117,20 +99,17 @@ public class Wrapper : MonoBehaviour {
         //SPH_System = Animate1(SPH_System);
         //GetPoints(SPH_System, Points, Points.GetLength(0), Points.GetLength(1));
 
-            InternalAnimate();
-            //Debug.Log("SPh state = " +InternalRunningState().ToString());
-            //Points = new float[pointCount,3];   
-            GetInternalPoints(Points,Points.GetLength(0), Points.GetLength(1) );
-            //Animate2(SPH_System, Points, Points.GetLength(0), Points.GetLength(1));
-            //Debug.Log("Do Animate");
-            //Debug.Log("Point 0,1 = " + Points[0,1].ToString());
-            //Debug.Log("Point 3,1 = " + Points[3,1].ToString());
-            //Debug.Log("Point 8,1 = " + Points[8,1].ToString());
-            //Debug.Log("Point 10,2 = " + Points[10,2].ToString());
+            InternalAnimate();   
+            GetInternalPoints(Points,height, width );
             
-            for(int i = 0; i<GetInternalLength(); i++)
+            
+            
+            for(int i = 0; i<pointCount; i++)
             {
-                allParticles[i].transform.position = new Vector3((float)Points[i,0],-(float)Points[i,1],(float)Points[i,2]);
+                vec.Set((float)Points[i,0],-(float)Points[i,1],(float)Points[i,2]);   
+                //allParticles[i].transform.position = new Vector3((float)Points[i,0],-(float)Points[i,1],(float)Points[i,2]);
+                //allParticles[i].transform.position = vec;
+                allParticles[i].transform.position = vec;
             }
 	}
     
