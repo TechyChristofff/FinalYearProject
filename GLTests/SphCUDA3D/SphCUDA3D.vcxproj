@@ -66,22 +66,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <None Include="..\..\..\sphfluid\SPH_GPU_3D_v1\sph_kernel.cu" />
-    <None Include="..\..\..\sphfluid\SPH_GPU_3D_v1\sph_system.cu" />
-    <None Include="..\..\..\sphfluid\SPH_GPU_3D_v1\sph_system.cuh" />
     <None Include="packages.config" />
+    <None Include="src\README" />
+    <None Include="src\sph_kernel.cu" />
+    <None Include="src\sph_system.cu" />
+    <None Include="src\sph_system.cuh" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\sphfluid\SPH_GPU_3D_v1\sph_data.h" />
-    <ClInclude Include="..\..\..\sphfluid\SPH_GPU_3D_v1\sph_header.h" />
-    <ClInclude Include="..\..\..\sphfluid\SPH_GPU_3D_v1\sph_math.h" />
-    <ClInclude Include="..\..\..\sphfluid\SPH_GPU_3D_v1\sph_system.h" />
-    <ClInclude Include="..\..\..\sphfluid\SPH_GPU_3D_v1\sph_timer.h" />
+    <ClCompile Include="src\sph_main.cpp" />
+    <ClCompile Include="src\sph_system.cpp" />
+    <ClCompile Include="src\sph_timer.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\sphfluid\SPH_GPU_3D_v1\sph_main.cpp" />
-    <ClCompile Include="..\..\..\sphfluid\SPH_GPU_3D_v1\sph_system.cpp" />
-    <ClCompile Include="..\..\..\sphfluid\SPH_GPU_3D_v1\sph_timer.cpp" />
+    <ClInclude Include="src\sph_data.h" />
+    <ClInclude Include="src\sph_header.h" />
+    <ClInclude Include="src\sph_math.h" />
+    <ClInclude Include="src\sph_system.h" />
+    <ClInclude Include="src\sph_timer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -92,6 +92,83 @@ SPHSystem::SPHSystem()
 	sys_running=0;
 }
 
+SPHSystem::SPHSystem(int maxParticles,float kernelInput, float massInput, float gravX, float gravY, float gravZ, float worldSizeX, float worldSizeY,float worldSizeZ,float wallDampening, float restDencity,float gasConstant, float viscosityInput, float timeStep, float surfaceNormals, float surfaceCoeffeciant, float poly6Val1, float poly6Val2, float poly6Val3, float spikyVal1,float spikyVal2,float viscoVal1, float grad6Polyval1,float grad6Polyval2,float grad6Polyval3,float viscoVal2, float lpcVal1, float lpcVal2, float lpcVal3)
+{
+    max_particle=(uint)maxParticles;
+    send_callback("Max Particles = " + float_conversion(max_particle));
+    num_particle=0;
+    send_callback("Initial Particles = " + float_conversion(num_particle));
+    
+    kernel=kernelInput;
+    send_callback("Kernal = " + float_conversion(kernel));
+    mass=massInput;
+    send_callback("Mass = " + float_conversion(mass));
+    
+    world_size.x=worldSizeX;
+    send_callback("World Size X = " + float_conversion(world_size.x));
+    world_size.y=worldSizeY;
+    send_callback("World Size Y = " + float_conversion(world_size.y));
+    world_size.z=worldSizeZ;
+    send_callback("World Size Z = " + float_conversion(world_size.z));
+    cell_size=kernel;
+    send_callback("Cell Size = " + float_conversion(cell_size));
+    grid_size.x=(uint)ceil(world_size.x/cell_size);
+    send_callback("Grid Size X = " + float_conversion((float)grid_size.x));
+    grid_size.y=(uint)ceil(world_size.y/cell_size);
+    send_callback("Grid Size Y = " + float_conversion((float)grid_size.y));
+    grid_size.z=(uint)ceil(world_size.z/cell_size);
+    send_callback("Grid Size Z = " + float_conversion((float)grid_size.z));
+    tot_cell=grid_size.x*grid_size.y*grid_size.z;
+    send_callback("Total Cells = " + float_conversion(tot_cell));
+    
+    gravity.x=gravX;
+    send_callback("Gravity X = " + float_conversion(gravity.x));
+    gravity.y=gravY;
+    send_callback("Gravity Y = " + float_conversion(gravity.y));
+    gravity.z=gravZ;
+    send_callback("Gravity Z = " + float_conversion(gravity.z));
+    wall_damping=wallDampening;
+    send_callback("Wall Dampening = " + float_conversion(wall_damping));
+    rest_density=restDencity;
+    send_callback("Rest Density = " + float_conversion(rest_density));
+    gas_constant=gasConstant;
+    send_callback("Gas Constant = " + float_conversion(gas_constant));
+    viscosity=viscosityInput;
+    send_callback("Viscosity = " + float_conversion(viscosity));
+    time_step=timeStep;
+    send_callback("Time Step = " + float_conversion(time_step));
+    surf_norm=surfaceNormals;
+    send_callback("Surface normals = " + float_conversion(surf_norm));
+    surf_coe=surfaceCoeffeciant;
+    send_callback("Surface coeffeciant= " + float_conversion(surf_coe));
+    
+    poly6_value=poly6Val1/(poly6Val2 * PI * pow(kernel, poly6Val3));;
+    send_callback("Poly6 value = " + float_conversion(poly6_value));
+    spiky_value=-spikyVal1/(PI * pow(kernel, spikyVal2));
+    send_callback("Spiky value = " + float_conversion(spiky_value));
+    visco_value=viscoVal1/(PI * pow(kernel, viscoVal2));
+    send_callback("Viscosity Value = " + float_conversion(visco_value));
+    
+    grad_poly6=grad6Polyval1/(grad6Polyval2 * PI * pow(kernel, grad6Polyval3));
+    send_callback("Grad Poly 6 = " + float_conversion(grad_poly6));
+    lplc_poly6=lpcVal1/(lpcVal2 * PI * pow(kernel, lpcVal3));
+    send_callback("Lplc Poly 6 = " + float_conversion(lplc_poly6));
+    
+    kernel_2=kernel*kernel;
+    send_callback("Kernal Squared = " + float_conversion(kernel_2));
+    self_dens=mass*poly6_value*pow(kernel, 6);
+    send_callback("Self Dencity = " + float_conversion(self_dens));
+    self_lplc_color=lplc_poly6*mass*kernel_2*(0-3/4*kernel_2);
+    send_callback("Lplc colour = " + float_conversion(self_lplc_color));
+    
+    mem=(Particle *)malloc(sizeof(Particle)*max_particle);
+    cell=(Particle **)malloc(sizeof(Particle *)*tot_cell);
+    
+    sys_running=0;
+
+    
+}
+
 SPHSystem::SPHSystem(int maxParticles)
 {
     max_particle=30000;

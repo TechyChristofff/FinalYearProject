@@ -64,6 +64,29 @@ extern "C" EXPORT_API bool InitInternalSystem()
     }
 }
 
+extern "C" EXPORT_API bool InitVariableSystem(int maxParticles,float kernelInput, float massInput, float gravX, float gravY, float gravZ, float worldSizeX, float worldSizeY,float worldSizeZ,float wallDampening,float restDencity,float gasConstant, float viscosityInput, float timeStep, float surfaceNormals, float surfaceCoeffeciant, float poly6Val1, float poly6Val2,float poly6Val3, float spikyVal1,float spikyVal2,float viscoVal1, float grad6Polyval1,float grad6Polyval2,float grad6Polyval3,float viscoVal2, float lpcVal1, float lpcVal2, float lpcVal3)
+{
+    real_world_origin.x=-10.0f;
+    real_world_origin.y=-10.0f;
+    real_world_origin.z=-10.0f;
+    
+    real_world_side.x=20.0f;
+    real_world_side.y=20.0f;
+    real_world_side.z=20.0f;
+    
+    sph = new SPHSystem( maxParticles, kernelInput,  massInput,  gravX,  gravY,  gravZ,  worldSizeX,  worldSizeY, worldSizeZ, wallDampening, restDencity, gasConstant,  viscosityInput,  timeStep,  surfaceNormals,  surfaceCoeffeciant,  poly6Val1,  poly6Val2, poly6Val3,  spikyVal1, spikyVal2, viscoVal1,  grad6Polyval1, grad6Polyval2, grad6Polyval3, viscoVal2,  lpcVal1,  lpcVal2,  lpcVal3);
+    sph->send_callback("System Initialised");
+    sph->init_limited_system();
+    
+    if (sph != nullptr && sph->sys_running == 0) {
+        return true;
+    }else
+    {
+        return false;
+    }
+
+}
+
 extern "C" EXPORT_API void GetInternalPoints(float* arrayin, int height, int width)
 {
     sim_ratio.x=real_world_side.x/sph->world_size.x;

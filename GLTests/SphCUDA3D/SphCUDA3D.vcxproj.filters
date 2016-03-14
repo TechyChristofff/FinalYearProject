@@ -15,37 +15,38 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\sphfluid\SPH_GPU_3D_v1\sph_kernel.cu" />
-    <None Include="..\..\..\sphfluid\SPH_GPU_3D_v1\sph_system.cu" />
-    <None Include="..\..\..\sphfluid\SPH_GPU_3D_v1\sph_system.cuh" />
     <None Include="packages.config" />
+    <None Include="src\sph_system.cu" />
+    <None Include="src\sph_system.cuh" />
+    <None Include="src\README" />
+    <None Include="src\sph_kernel.cu" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\sphfluid\SPH_GPU_3D_v1\sph_data.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\sphfluid\SPH_GPU_3D_v1\sph_header.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\sphfluid\SPH_GPU_3D_v1\sph_math.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\sphfluid\SPH_GPU_3D_v1\sph_system.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\sphfluid\SPH_GPU_3D_v1\sph_timer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    <ClCompile Include="src\sph_main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sph_system.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sph_timer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\sphfluid\SPH_GPU_3D_v1\sph_main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\sphfluid\SPH_GPU_3D_v1\sph_system.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\sphfluid\SPH_GPU_3D_v1\sph_timer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
+    <ClInclude Include="src\sph_math.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sph_system.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sph_timer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sph_data.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sph_header.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -65,6 +65,9 @@ public:
 public:
 	SPHSystem();
     SPHSystem(int maxParticles);
+    SPHSystem(int maxParticles,float kernelInput, float massInput, float gravX, float gravY, float gravZ, float worldSizeX, float worldSizeY,float worldSizeZ,float wallDampening, float restDencity,
+              float gasConstant, float viscosityInput, float timeStep, float surfaceNormals, float surfaceCoeffeciant, float poly6Val1, float poly6Val2, float poly6Val3, float spikyVal1,
+              float spikyVal2,float viscoVal1, float grad6Polyval1,float grad6Polyval2,float grad6Polyval3,float viscoVal2, float lpcVal1, float lpcVal2, float lpcVal3);
 	~SPHSystem();
 	void animation();
 	void init_system();
