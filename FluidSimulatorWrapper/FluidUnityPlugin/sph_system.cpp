@@ -19,6 +19,8 @@ void SPHSystem::send_callback(std::string message)
 
 SPHSystem::SPHSystem()
 {
+    init_particle = 11600;
+    send_callback("Initial Particles = " + float_conversion(init_particle));
 	max_particle=30000;
     send_callback("Max Particles = " + float_conversion(max_particle));
 	num_particle=0;
@@ -92,8 +94,10 @@ SPHSystem::SPHSystem()
 	sys_running=0;
 }
 
-SPHSystem::SPHSystem(int maxParticles,float kernelInput, float massInput, float gravX, float gravY, float gravZ, float worldSizeX, float worldSizeY,float worldSizeZ,float wallDampening, float restDencity,float gasConstant, float viscosityInput, float timeStep, float surfaceNormals, float surfaceCoeffeciant, float poly6Val1, float poly6Val2, float poly6Val3, float spikyVal1,float spikyVal2,float viscoVal1, float grad6Polyval1,float grad6Polyval2,float grad6Polyval3,float viscoVal2, float lpcVal1, float lpcVal2, float lpcVal3)
+SPHSystem::SPHSystem(int initialParticles, int maxParticles,float kernelInput, float massInput, float gravX, float gravY, float gravZ, float worldSizeX, float worldSizeY,float worldSizeZ,float wallDampening, float restDencity,float gasConstant, float viscosityInput, float timeStep, float surfaceNormals, float surfaceCoeffeciant)
 {
+    init_particle = (uint)initialParticles;
+    send_callback("Initial Particles = " + float_conversion(init_particle));
     max_particle=(uint)maxParticles;
     send_callback("Max Particles = " + float_conversion(max_particle));
     num_particle=0;
@@ -142,16 +146,16 @@ SPHSystem::SPHSystem(int maxParticles,float kernelInput, float massInput, float 
     surf_coe=surfaceCoeffeciant;
     send_callback("Surface coeffeciant= " + float_conversion(surf_coe));
     
-    poly6_value=poly6Val1/(poly6Val2 * PI * pow(kernel, poly6Val3));;
+    poly6_value=315.0f/(64.0f * PI * pow(kernel, 9));;
     send_callback("Poly6 value = " + float_conversion(poly6_value));
-    spiky_value=-spikyVal1/(PI * pow(kernel, spikyVal2));
+    spiky_value=-45.0f/(PI * pow(kernel, 6));
     send_callback("Spiky value = " + float_conversion(spiky_value));
-    visco_value=viscoVal1/(PI * pow(kernel, viscoVal2));
+    visco_value=45.0f/(PI * pow(kernel, 6));
     send_callback("Viscosity Value = " + float_conversion(visco_value));
     
-    grad_poly6=grad6Polyval1/(grad6Polyval2 * PI * pow(kernel, grad6Polyval3));
+    grad_poly6=-945/(32 * PI * pow(kernel, 9));
     send_callback("Grad Poly 6 = " + float_conversion(grad_poly6));
-    lplc_poly6=lpcVal1/(lpcVal2 * PI * pow(kernel, lpcVal3));
+    lplc_poly6=-945/(8 * PI * pow(kernel, 9));
     send_callback("Lplc Poly 6 = " + float_conversion(lplc_poly6));
     
     kernel_2=kernel*kernel;
@@ -160,53 +164,6 @@ SPHSystem::SPHSystem(int maxParticles,float kernelInput, float massInput, float 
     send_callback("Self Dencity = " + float_conversion(self_dens));
     self_lplc_color=lplc_poly6*mass*kernel_2*(0-3/4*kernel_2);
     send_callback("Lplc colour = " + float_conversion(self_lplc_color));
-    
-    mem=(Particle *)malloc(sizeof(Particle)*max_particle);
-    cell=(Particle **)malloc(sizeof(Particle *)*tot_cell);
-    
-    sys_running=0;
-
-    
-}
-
-SPHSystem::SPHSystem(int maxParticles)
-{
-    max_particle=30000;
-    num_particle=0;
-    
-    kernel=0.04f;
-    mass=0.02f;
-    
-    world_size.x=0.64f;
-    world_size.y=0.64f;
-    world_size.z=0.64f;
-    cell_size=kernel;
-    grid_size.x=(uint)ceil(world_size.x/cell_size);
-    grid_size.y=(uint)ceil(world_size.y/cell_size);
-    grid_size.z=(uint)ceil(world_size.z/cell_size);
-    tot_cell=grid_size.x*grid_size.y*grid_size.z;
-    
-    gravity.x=0.0f;
-    gravity.y=-6.8f;
-    gravity.z=0.0f;
-    wall_damping=-0.5f;
-    rest_density=1000.0f;
-    gas_constant=1.0f;
-    viscosity=6.5f;
-    time_step=0.003f;
-    surf_norm=6.0f;
-    surf_coe=0.1f;
-    
-    poly6_value=315.0f/(64.0f * PI * pow(kernel, 9));;
-    spiky_value=-45.0f/(PI * pow(kernel, 6));
-    visco_value=45.0f/(PI * pow(kernel, 6));
-    
-    grad_poly6=-945/(32 * PI * pow(kernel, 9));
-    lplc_poly6=-945/(8 * PI * pow(kernel, 9));
-    
-    kernel_2=kernel*kernel;
-    self_dens=mass*poly6_value*pow(kernel, 6);
-    self_lplc_color=lplc_poly6*mass*kernel_2*(0-3/4*kernel_2);
     
     mem=(Particle *)malloc(sizeof(Particle)*max_particle);
     cell=(Particle **)malloc(sizeof(Particle *)*tot_cell);
@@ -285,7 +242,7 @@ void SPHSystem::init_limited_system()
         {
             for(pos.z=world_size.z*0.0f; pos.z<world_size.z*0.6f; pos.z+=(kernel*0.5f))
             {
-                if (num_particle<max_particle) {
+                if (num_particle<init_particle) {
                     add_particle(pos, vel);
                 }
                 
@@ -296,26 +253,38 @@ void SPHSystem::init_limited_system()
 
 void SPHSystem::add_particle(float3 pos, float3 vel)
 {
-	Particle *p=&(mem[num_particle]);
+    send_callback("Add called");
+    if (pos.x<world_size.x && pos.x > 0) {
+        if (pos.y<world_size.y && pos.y > 0) {
+            if (pos.z<world_size.z && pos.z > 0) {
+                if(num_particle < max_particle)
+                {
+                    Particle *p=&(mem[num_particle]);
+                    
+                    p->id=num_particle;
+                    
+                    p->pos=pos;
+                    p->vel=vel;
+                    
+                    p->acc.x=0.0f;
+                    p->acc.y=0.0f;
+                    p->acc.z=0.0f;
+                    p->ev.x=0.0f;
+                    p->ev.y=0.0f;
+                    p->ev.z=0.0f;
+                    
+                    p->dens=rest_density;
+                    p->pres=0.0f;
+                    
+                    p->next=NULL;
+                    
+                    num_particle++;
+                    send_callback("Particle Added");
+                }
 
-	p->id=num_particle;
-
-	p->pos=pos;
-	p->vel=vel;
-
-	p->acc.x=0.0f;
-	p->acc.y=0.0f;
-	p->acc.z=0.0f;
-	p->ev.x=0.0f;
-	p->ev.y=0.0f;
-	p->ev.z=0.0f;
-
-	p->dens=rest_density;
-	p->pres=0.0f;
-
-	p->next=NULL;
-
-	num_particle++;
+            }
+        }
+    }
 }
 
 void SPHSystem::build_table()
@@ -498,11 +467,11 @@ void SPHSystem::comp_force_adv()
                             p->acc.y=p->acc.y + rel_vel.y*temp_force; 
                             p->acc.z=p->acc.z + rel_vel.z*temp_force; 
                             
-                            float temp=(-1) * grad_poly6 * V * pow(kernel_2-r2, 2);
-                            grad_color.x += temp * rel_pos.x;
-                            grad_color.y += temp * rel_pos.y;
-                            grad_color.z += temp * rel_pos.z;
-                            lplc_color += lplc_poly6 * V * (kernel_2-r2) * (r2-3/4*(kernel_2-r2));
+                            //float temp=(-1) * grad_poly6 * V * pow(kernel_2-r2, 2);
+                            //grad_color.x += temp * rel_pos.x;
+                            //grad_color.y += temp * rel_pos.y;
+                            //grad_color.z += temp * rel_pos.z;
+                            //lplc_color += lplc_poly6 * V * (kernel_2-r2) * (r2-3/4*(kernel_2-r2));
                         }
                         
                         np=np->next;
