@@ -44,8 +44,7 @@ static public class MarchingCubes
 		mesh.triangles = index.ToArray();
 		
 		return mesh;
-	}
-	
+    }
 	static void FillCube(int x, int y, int z, float[,,] voxels, float[] cube)
 	{
 		for(int i = 0; i < 8; i++)

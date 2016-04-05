@@ -1,0 +1,24 @@
+﻿Build started 01/04/2016 14:31:58.
+     1>Project "\\Mac\Home\Documents\FinalYearProject\FinalYearProject\GLTests\MarchingCube\MarchingCube.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I\\Mac\Home\Documents\FinalYearProject\FinalYearProject\GLTests\packages\nupengl.core.0.1.0.1\build\native\../..//build/native/include/ /I\\Mac\Home\Documents\FinalYearProject\FinalYearProject\GLTests\packages\glew.1.9.0.1\build\native\../..//build/native/include/ /I\\Mac\Home\Documents\FinalYearProject\FinalYearProject\GLTests\packages\freeglut.2.8.1.15\build\native\../..//build/native/include/ /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D HAS_GLEW /D HAS_FREEGLUT /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt src\main.cpp src\MarchingCube.cpp
+         MarchingCube.cpp
+         main.cpp
+     1>\\mac\home\documents\finalyearproject\finalyearproject\gltests\marchingcube\src\main.cpp(59): warning C4244: '=' : conversion from 'float' to 'uint', possible loss of data
+     1>\\mac\home\documents\finalyearproject\finalyearproject\gltests\marchingcube\src\main.cpp(60): warning C4244: '=' : conversion from 'float' to 'uint', possible loss of data
+     1>\\mac\home\documents\finalyearproject\finalyearproject\gltests\marchingcube\src\main.cpp(61): warning C4244: '=' : conversion from 'float' to 'uint', possible loss of data
+     1>\\mac\home\documents\finalyearproject\finalyearproject\gltests\marchingcube\src\main.cpp(98): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>\\mac\home\documents\finalyearproject\finalyearproject\gltests\marchingcube\src\main.cpp(172): warning C4244: 'argument' : conversion from 'float' to 'GLsizei', possible loss of data
+     1>\\mac\home\documents\finalyearproject\finalyearproject\gltests\marchingcube\src\main.cpp(234): warning C4244: '=' : conversion from 'GLint' to 'float', possible loss of data
+     1>\\mac\home\documents\finalyearproject\finalyearproject\gltests\marchingcube\src\main.cpp(235): warning C4244: '=' : conversion from 'GLint' to 'float', possible loss of data
+     1>\\mac\home\documents\finalyearproject\finalyearproject\gltests\marchingcube\src\main.cpp(349): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+         Generating Code...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"\\Mac\Home\Documents\FinalYearProject\FinalYearProject\GLTests\Debug\MarchingCube.exe" /INCREMENTAL /NOLOGO \\Mac\Home\Documents\FinalYearProject\FinalYearProject\GLTests\packages\nupengl.core.0.1.0.1\build\native\../..//build/native/lib/Win32\glew32.lib \\Mac\Home\Documents\FinalYearProject\FinalYearProject\GLTests\packages\nupengl.core.0.1.0.1\build\native\../..//build/native/lib/Win32\glfw3dll.lib \\Mac\Home\Documents\FinalYearProject\FinalYearProject\GLTests\packages\nupengl.core.0.1.0.1\build\native\../..//build/native/lib/Win32\freeglut.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"\\Mac\Home\Documents\FinalYearProject\FinalYearProject\GLTests\Debug\MarchingCube.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"\\Mac\Home\Documents\FinalYearProject\FinalYearProject\GLTests\Debug\MarchingCube.lib" /MACHINE:X86 Debug\main.obj
+         Debug\MarchingCube.obj
+         MarchingCube.vcxproj -> \\Mac\Home\Documents\FinalYearProject\FinalYearProject\GLTests\Debug\MarchingCube.exe
+     1>Done Building Project "\\Mac\Home\Documents\FinalYearProject\FinalYearProject\GLTests\MarchingCube\MarchingCube.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:03.09
