@@ -47,7 +47,9 @@ public class Wrapper : MonoBehaviour {
     private static extern void AddParticle(float PosX, float PosY, float PosZ, float VelX, float VelY, float VelZ );
     
     #endregion 
-    public bool managed;
+    public bool managed, initilised;
+    
+    bool isRunning;
     float[,] SimulationPoints;
     Vector3 vec = new Vector3();
     int width, height;
@@ -71,9 +73,18 @@ public class Wrapper : MonoBehaviour {
     public float worldRatio = 21.25f; //21.25
     
 	// Use this for initialization
-	void Start () {
+    void Start()
+    {
+  
+        //InitialiseFluidSimulation();
+    }
+    
+    public void InitialiseFluidSimulation()
+    {
         width = 0;
         height = 0;
+        
+        isRunning = false;
          
         InitialiseCallbackSystem();
         
@@ -83,20 +94,18 @@ public class Wrapper : MonoBehaviour {
         //Debug.Log(SimulationPoints[0,0].ToString());
         
         Debug.Log("SPh state = " +InternalRunningState().ToString());
-        
-	}
+    }
     
     public void InitiliseSystem()
     {
-        bool test = false;
 		if (!managed) {
-			test = InitInternalSystem ();
+			initilised = InitInternalSystem ();
 		} else {
-			test = InitVariableSystem (initalParticles, maxParticles, kernelInput, massInput, gravX, gravY, gravZ, worldSizeX, worldSizeY, worldSizeZ, wallDampening, restDencity, 
+			initilised = InitVariableSystem (initalParticles, maxParticles, kernelInput, massInput, gravX, gravY, gravZ, worldSizeX, worldSizeY, worldSizeZ, wallDampening, restDencity, 
 				gasConstant, viscosityInput, timeStep, surfaceNormals, surfaceCoeffeciant);
         }
         
-        Debug.Log(test);
+        Debug.Log(initilised);
         
         Debug.Log(GetInternalLength().ToString());
         SimulationPoints = new float[GetInternalLength(),3];
@@ -106,7 +115,9 @@ public class Wrapper : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-            
+        
+        if(!initilised) return;
+        
         int newPointCount = SimulationPoints.Length;
         if(Input.GetKey(KeyCode.M))
         {
@@ -133,8 +144,18 @@ public class Wrapper : MonoBehaviour {
             UpdatePointArray();
         }
         
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.P))
+        {
             InternalStartRunning();
+            isRunning = !isRunning;
+        }
+            
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            InternalDispose();
+            InitialiseFluidSimulation();
+        }
+            
 	}
     
     void UpdatePointArray()
@@ -146,6 +167,7 @@ public class Wrapper : MonoBehaviour {
     
     void FixedUpdate()
     {
+        if(!initilised) return;
         InternalAnimate();   
         GetInternalPoints(SimulationPoints,height, width , worldRatio);
         Debug.Log("SPh state = " +InternalRunningState().ToString());
@@ -194,6 +216,13 @@ public class Wrapper : MonoBehaviour {
     public bool AddShape(GameObject shape)
     {
         return false;
+    }
+    
+    public bool IsRunning {
+        get
+        {
+            return isRunning;
+        }
     }
    
 }

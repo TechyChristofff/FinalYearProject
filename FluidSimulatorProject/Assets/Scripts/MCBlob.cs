@@ -432,13 +432,12 @@ public class MCBlob: MonoBehaviour {
 	void Start () {
 		lt=0f;
         Simulation = GameObject.Find("Simulation").GetComponent<Wrapper>();
-		blobs=new float[6][];
+		blobs=new float[5][];
 		blobs[0]=new float[]{.16f,.26f,.16f,.13f};
 		blobs[1]=new float[]{.13f,-.134f,.35f,.12f};
 		blobs[2]=new float[]{-.18f,.125f,-.25f,.16f};
 		blobs[3]=new float[]{-.13f,.23f,.255f,.13f};		
 		blobs[4]=new float[]{-.18f,.125f,.35f,.12f};
-        blobs[5]=new float[]{-.12f,.015f,.366f,.12f};
         //blobs = new float[Simulation.SimulationPointCount][];
         
         //blobs = PointToBlobConversion(Simulation.Points);
