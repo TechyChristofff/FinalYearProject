@@ -398,7 +398,6 @@ public class MCBlob: MonoBehaviour {
 		startEngine();	
 	}
  
-    Wrapper Simulation;
 	//Unity and Sample specific
 	void Update () {
         
@@ -431,7 +430,6 @@ public class MCBlob: MonoBehaviour {
 	//Unity and Sample Specific
 	void Start () {
 		lt=0f;
-        Simulation = GameObject.Find("Simulation").GetComponent<Wrapper>();
 		blobs=new float[5][];
 		blobs[0]=new float[]{.16f,.26f,.16f,.13f};
 		blobs[1]=new float[]{.13f,-.134f,.35f,.12f};
@@ -446,16 +444,6 @@ public class MCBlob: MonoBehaviour {
  
 	    Regen();
 	}
- 
-    float[][] PointToBlobConversion(float[,] input)
-    {
-        float[][] output = new float[Simulation.SimulationPointCount][];
-        for (int i = 0; i < Simulation.SimulationPointCount; i++)
-        {
-            output[i] = new float[]{input[i,0],input[i,1],input[i,2],0};
-        }
-        return output;
-    }
  
 	/*Unity Specific starting of engine*/
 	void startEngine()

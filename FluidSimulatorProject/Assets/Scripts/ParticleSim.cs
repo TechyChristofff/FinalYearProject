@@ -2,7 +2,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
 
 public class ParticleSim : MonoBehaviour {
     
@@ -51,8 +50,6 @@ public class ParticleSim : MonoBehaviour {
 		
         currentPoints = Controller.PublicSimulation.SimulationPointCount;
     }
-	
-	
 	
     
 	public void Render(float[,] input)
