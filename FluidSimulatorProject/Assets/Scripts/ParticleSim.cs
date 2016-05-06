@@ -2,11 +2,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
 
 public class ParticleSim : MonoBehaviour {
     
-    Wrapper Simulation;
+	SimulationController Controller;
     public bool mesh = false;
     
     public bool render = true;
@@ -17,32 +16,45 @@ public class ParticleSim : MonoBehaviour {
     GameObject[] particlePool;
     Vector3 vec;
     int currentPoints;
+	
+	string state;
+	
+	List<float[,]> Cache;
 
 	void Start () {
         
         vec = new Vector3();
-        Simulation = GameObject.Find("Simulation").GetComponent<Wrapper>();
+		Controller = GameObject.Find("Controller").GetComponent<SimulationController>();
+        
+        Controller.PublicSimulation.InitialiseFluidSimulation();
         
         //Simulation.ToggleSimulation();
         
-        ResetSubParticles();
+        ResetSubParticles(Controller.PublicSimulation.Points);
+		Cache = new List<float[,]>();
 	}
     
     void Update()
     {
-        if(Input.anyKeyDown || currentPoints != Simulation.SimulationPointCount)
-            ResetSubParticles();
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            render = !render;
+        }
+        if(Input.anyKeyDown || currentPoints != Controller.PublicSimulation.SimulationPointCount)
+            ResetSubParticles(Controller.PublicSimulation.Points);
     }
     
     void LateUpdate()
     {
-        MeshRenderer();
-        currentPoints = Simulation.SimulationPointCount;
+		Render(Controller.PublicSimulation.Points);
+		
+        currentPoints = Controller.PublicSimulation.SimulationPointCount;
     }
+	
     
-    void MeshRenderer()
-    {
-        if (particleMesh == null || Simulation.SimulationPointCount<= 0 || !mesh) return;
+	public void Render(float[,] input)
+	{
+		if (particleMesh == null || input.Length<= 0 || !mesh) return;
 		
 		if (Application.isEditor)
 		{
@@ -50,11 +62,12 @@ public class ParticleSim : MonoBehaviour {
 		}
 	
         Particle[] particles = GetComponent<ParticleEmitter>().particles;
-        
-		for (int i=0; i<Simulation.SimulationPointCount; ++i)
+       
+	    
+		for (int i=0; i<input.Length; ++i)
 		{
 			GameObject particleObject = particlePool[i];
-			if (i >= Simulation.Points.Length)
+			if (i >= input.Length)
 			{
 				particleObject.GetComponent<Renderer>().enabled = false;
 				
@@ -63,7 +76,7 @@ public class ParticleSim : MonoBehaviour {
 			{
 				//float[] p = Point[i];
                 //Debug.Log(Simulation.Points[i,0]);
-                vec.Set((float)Simulation.Points[i,0],(float)Simulation.Points[i,1],(float)Simulation.Points[i,2]); 
+                vec.Set(input[i,0],input[i,1],input[i,2]); 
                 //Debug.Log(vec);  
                 particleObject.GetComponent<Renderer>().enabled = true;
                 particleObject.GetComponent<Renderer>().receiveShadows = render;
@@ -74,17 +87,17 @@ public class ParticleSim : MonoBehaviour {
 				particleObject.transform.localScale = new Vector3(scale, scale, scale);
 			}
 		}
-    
-    }
-      void ResetSubParticles()
+	}
+	
+    void ResetSubParticles(float[,] input)
 	{
-		if (particleMesh == null || Simulation.SimulationPointCount <= 0 || !mesh) return;
+		if (particleMesh == null || input.Length <= 0 || !mesh) return;
 		
 		RemoveSubParticles();
 		
-		particlePool = new GameObject[Simulation.SimulationPointCount];
+		particlePool = new GameObject[input.Length];
 
-		for (int i=0; i<Simulation.SimulationPointCount; ++i)
+		for (int i=0; i<input.Length; ++i)
 		{
 			GameObject particleObject = new GameObject();
 			particleObject.name = "ParticleMesh";
@@ -101,7 +114,7 @@ public class ParticleSim : MonoBehaviour {
 			particleObject.transform.localScale = new Vector3(meshScale, meshScale, meshScale);
             particleObject.GetComponent<Renderer>().enabled = false;
 
-			particlePool[i] = particleObject;
+			particlePool[i] = particleObject;	
 		}
 	}
     
@@ -123,5 +136,4 @@ public class ParticleSim : MonoBehaviour {
 			particlePool = null;
 		}
 	}
-   
 }

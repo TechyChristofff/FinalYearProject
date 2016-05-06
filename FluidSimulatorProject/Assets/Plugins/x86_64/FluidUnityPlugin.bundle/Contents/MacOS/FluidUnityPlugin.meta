@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:FluidSimulatorProject/Assets/Plugins/x86_64/FluidUnityPlugin.bundle/Contents/MacOS/FluidUnityPlugin.meta
 guid: 7328c8c8d1eb6437fbe2bb9f4fe21f9e
 timeCreated: 1462479614
+=======
+guid: bade92931f2be4afdbfd91b0cd10dffd
+timeCreated: 1460382426
+>>>>>>> master:FluidSimulatorProject/Assets/Plugins/Release/FluidUnityPlugin.bundle.dSYM/Contents/Resources/DWARF/FluidUnityPlugin.meta
 licenseType: Free
 DefaultImporter:
   userData: 

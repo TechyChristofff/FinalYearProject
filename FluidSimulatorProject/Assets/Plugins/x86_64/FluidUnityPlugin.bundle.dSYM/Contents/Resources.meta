@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:FluidSimulatorProject/Assets/Plugins/x86_64/FluidUnityPlugin.bundle.dSYM/Contents/Resources.meta
 guid: 4e08630cfdaf340d4a78b7774624960c
 folderAsset: yes
 timeCreated: 1462479614
+=======
+guid: beea1362e549546b0bb533a078907683
+folderAsset: yes
+timeCreated: 1460382404
+>>>>>>> master:FluidSimulatorProject/Assets/Plugins/Release/FluidUnityPlugin.bundle.dSYM/Contents/Resources.meta
 licenseType: Free
 DefaultImporter:
   userData: 

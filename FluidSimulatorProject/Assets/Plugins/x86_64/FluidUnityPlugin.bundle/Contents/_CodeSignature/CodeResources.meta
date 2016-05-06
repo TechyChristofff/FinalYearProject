@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:FluidSimulatorProject/Assets/Plugins/x86_64/FluidUnityPlugin.bundle/Contents/_CodeSignature/CodeResources.meta
 guid: 17a177fae14e44ccea66a9fd7a0aaac5
 timeCreated: 1462479614
+=======
+guid: b01959a4e92104df49e52ded41d83c27
+timeCreated: 1460382426
+>>>>>>> master:FluidSimulatorProject/Assets/Plugins/Release/FluidUnityPlugin.bundle/Contents/_CodeSignature/CodeResources.meta
 licenseType: Free
 DefaultImporter:
   userData: 

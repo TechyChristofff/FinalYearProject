@@ -232,10 +232,12 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = FluidUnityPlugin/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = thetecheffect.FluidUnityPlugin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx10.11;
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = macosx;
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Debug;
@@ -247,11 +249,16 @@
 				INFOPLIST_FILE = FluidUnityPlugin/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				MTL_ENABLE_DEBUG_INFO = NO;
+<<<<<<< HEAD
 				ONLY_ACTIVE_ARCH = YES;
+=======
+				ONLY_ACTIVE_ARCH = NO;
+>>>>>>> master
 				PRODUCT_BUNDLE_IDENTIFIER = thetecheffect.FluidUnityPlugin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx10.11;
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = macosx;
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;

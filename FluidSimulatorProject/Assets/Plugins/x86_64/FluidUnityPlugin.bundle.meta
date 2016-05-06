@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:FluidSimulatorProject/Assets/Plugins/x86_64/FluidUnityPlugin.bundle.meta
 guid: 72c1de0554a9e47e7b8d1f88b72c6336
 folderAsset: yes
 timeCreated: 1462479614
+=======
+guid: 28444f2203cf7411da391bd23258f86c
+folderAsset: yes
+timeCreated: 1460382404
+>>>>>>> master:FluidSimulatorProject/Assets/Plugins/Release/FluidUnityPlugin.bundle.meta
 licenseType: Free
 PluginImporter:
   serializedVersion: 1

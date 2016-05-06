@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:FluidSimulatorProject/Assets/Plugins/x86_64/FluidUnityPlugin.bundle.dSYM/Contents/Info.plist.meta
 guid: d6f0f9632917e4d8080f36bc48f60976
 timeCreated: 1462479614
+=======
+guid: ddaac3fc399c140a0b79d242e831bf3c
+timeCreated: 1460382426
+>>>>>>> master:FluidSimulatorProject/Assets/Plugins/Release/FluidUnityPlugin.bundle.dSYM/Contents/Info.plist.meta
 licenseType: Free
 DefaultImporter:
   userData: 
