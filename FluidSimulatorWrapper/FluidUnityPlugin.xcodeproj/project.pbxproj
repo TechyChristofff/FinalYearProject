@@ -1,0 +1,280 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		836C6F701C490CDF00D6FF46 /* Main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 836C6F661C490CDF00D6FF46 /* Main.cpp */; };
+		838F2D6B1C5AA1EE00ADFA35 /* sph_system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 838F2D6A1C5AA1EE00ADFA35 /* sph_system.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		831C404F1C20567E003B6B6C /* FluidUnityPlugin.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FluidUnityPlugin.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		831C40521C20567E003B6B6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		836C6F661C490CDF00D6FF46 /* Main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Main.cpp; sourceTree = "<group>"; };
+		836C6F671C490CDF00D6FF46 /* Main.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Main.h; sourceTree = "<group>"; };
+		836C6F681C490CDF00D6FF46 /* sph_data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sph_data.h; sourceTree = "<group>"; };
+		836C6F691C490CDF00D6FF46 /* sph_header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sph_header.h; sourceTree = "<group>"; };
+		836C6F6C1C490CDF00D6FF46 /* sph_system.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sph_system.h; sourceTree = "<group>"; };
+		836C6F6F1C490CDF00D6FF46 /* sph_type.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sph_type.h; sourceTree = "<group>"; };
+		838F2D6A1C5AA1EE00ADFA35 /* sph_system.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sph_system.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		831C404C1C20567E003B6B6C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		831C40461C20567E003B6B6C = {
+			isa = PBXGroup;
+			children = (
+				831C40511C20567E003B6B6C /* FluidUnityPlugin */,
+				831C40501C20567E003B6B6C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		831C40501C20567E003B6B6C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				831C404F1C20567E003B6B6C /* FluidUnityPlugin.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		831C40511C20567E003B6B6C /* FluidUnityPlugin */ = {
+			isa = PBXGroup;
+			children = (
+				838F2D6A1C5AA1EE00ADFA35 /* sph_system.cpp */,
+				836C6F661C490CDF00D6FF46 /* Main.cpp */,
+				836C6F671C490CDF00D6FF46 /* Main.h */,
+				836C6F681C490CDF00D6FF46 /* sph_data.h */,
+				836C6F691C490CDF00D6FF46 /* sph_header.h */,
+				836C6F6C1C490CDF00D6FF46 /* sph_system.h */,
+				836C6F6F1C490CDF00D6FF46 /* sph_type.h */,
+				831C405B1C2056C0003B6B6C /* Supporting Files */,
+			);
+			path = FluidUnityPlugin;
+			sourceTree = "<group>";
+		};
+		831C405B1C2056C0003B6B6C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				831C40521C20567E003B6B6C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		831C404E1C20567E003B6B6C /* FluidUnityPlugin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 831C40551C20567E003B6B6C /* Build configuration list for PBXNativeTarget "FluidUnityPlugin" */;
+			buildPhases = (
+				831C404B1C20567E003B6B6C /* Sources */,
+				831C404C1C20567E003B6B6C /* Frameworks */,
+				831C404D1C20567E003B6B6C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FluidUnityPlugin;
+			productName = FluidUnityPlugin;
+			productReference = 831C404F1C20567E003B6B6C /* FluidUnityPlugin.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		831C40471C20567E003B6B6C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Chris Smith";
+				TargetAttributes = {
+					831C404E1C20567E003B6B6C = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = 831C404A1C20567E003B6B6C /* Build configuration list for PBXProject "FluidUnityPlugin" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 831C40461C20567E003B6B6C;
+			productRefGroup = 831C40501C20567E003B6B6C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				831C404E1C20567E003B6B6C /* FluidUnityPlugin */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		831C404D1C20567E003B6B6C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		831C404B1C20567E003B6B6C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				838F2D6B1C5AA1EE00ADFA35 /* sph_system.cpp in Sources */,
+				836C6F701C490CDF00D6FF46 /* Main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		831C40531C20567E003B6B6C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		831C40541C20567E003B6B6C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		831C40561C20567E003B6B6C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = FluidUnityPlugin/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_BUNDLE_IDENTIFIER = thetecheffect.FluidUnityPlugin;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		831C40571C20567E003B6B6C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = FluidUnityPlugin/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = thetecheffect.FluidUnityPlugin;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		831C404A1C20567E003B6B6C /* Build configuration list for PBXProject "FluidUnityPlugin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				831C40531C20567E003B6B6C /* Debug */,
+				831C40541C20567E003B6B6C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		831C40551C20567E003B6B6C /* Build configuration list for PBXNativeTarget "FluidUnityPlugin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				831C40561C20567E003B6B6C /* Debug */,
+				831C40571C20567E003B6B6C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 831C40471C20567E003B6B6C /* Project object */;
+}
