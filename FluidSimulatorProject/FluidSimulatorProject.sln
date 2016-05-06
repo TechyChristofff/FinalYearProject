@@ -1,5 +1,6 @@
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
 Project("{852EF133-D8CF-9EDC-74FC-8649B09FACC5}") = "FluidSimulatorProject", "Assembly-CSharp-firstpass.csproj", "{BE354585-A5A0-983A-9C54-E16131448E13}"
 EndProject
 Project("{852EF133-D8CF-9EDC-74FC-8649B09FACC5}") = "FluidSimulatorProject", "Assembly-CSharp.csproj", "{BC5A8546-0FB0-2FAF-5196-BBCE507B59DB}"
@@ -24,6 +25,9 @@ Global
 		{EE439EDE-27D7-AA58-B05C-DBFA3EDFA271}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE439EDE-27D7-AA58-B05C-DBFA3EDFA271}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE439EDE-27D7-AA58-B05C-DBFA3EDFA271}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
