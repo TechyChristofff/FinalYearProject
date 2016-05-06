@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		836C6F701C490CDF00D6FF46 /* Main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 836C6F661C490CDF00D6FF46 /* Main.cpp */; };
+		836C6F701C490CDF00D6FF46 /* SPH_Controller.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 836C6F661C490CDF00D6FF46 /* SPH_Controller.cpp */; };
 		838F2D6B1C5AA1EE00ADFA35 /* sph_system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 838F2D6A1C5AA1EE00ADFA35 /* sph_system.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		831C404F1C20567E003B6B6C /* FluidUnityPlugin.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FluidUnityPlugin.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		831C40521C20567E003B6B6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		836C6F661C490CDF00D6FF46 /* Main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Main.cpp; sourceTree = "<group>"; };
-		836C6F671C490CDF00D6FF46 /* Main.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Main.h; sourceTree = "<group>"; };
+		836C6F661C490CDF00D6FF46 /* SPH_Controller.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SPH_Controller.cpp; sourceTree = "<group>"; };
+		836C6F671C490CDF00D6FF46 /* SPH_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPH_Controller.h; sourceTree = "<group>"; };
 		836C6F681C490CDF00D6FF46 /* sph_data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sph_data.h; sourceTree = "<group>"; };
 		836C6F691C490CDF00D6FF46 /* sph_header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sph_header.h; sourceTree = "<group>"; };
 		836C6F6C1C490CDF00D6FF46 /* sph_system.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sph_system.h; sourceTree = "<group>"; };
@@ -54,8 +54,8 @@
 			isa = PBXGroup;
 			children = (
 				838F2D6A1C5AA1EE00ADFA35 /* sph_system.cpp */,
-				836C6F661C490CDF00D6FF46 /* Main.cpp */,
-				836C6F671C490CDF00D6FF46 /* Main.h */,
+				836C6F661C490CDF00D6FF46 /* SPH_Controller.cpp */,
+				836C6F671C490CDF00D6FF46 /* SPH_Controller.h */,
 				836C6F681C490CDF00D6FF46 /* sph_data.h */,
 				836C6F691C490CDF00D6FF46 /* sph_header.h */,
 				836C6F6C1C490CDF00D6FF46 /* sph_system.h */,
@@ -140,7 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				838F2D6B1C5AA1EE00ADFA35 /* sph_system.cpp in Sources */,
-				836C6F701C490CDF00D6FF46 /* Main.cpp in Sources */,
+				836C6F701C490CDF00D6FF46 /* SPH_Controller.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,6 +234,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				PRODUCT_BUNDLE_IDENTIFIER = thetecheffect.FluidUnityPlugin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.11;
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = bundle;
 			};
@@ -246,8 +247,10 @@
 				INFOPLIST_FILE = FluidUnityPlugin/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = thetecheffect.FluidUnityPlugin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.11;
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = bundle;
 			};

@@ -38,3 +38,5 @@
 /Users/Chris/Documents/FinalYearProject/FinalYearProject/FluidSimulatorProject/Temp/bin/Debug/Assembly-CSharp.dll.mdb
 /Users/Chris/Documents/FinalYearProject/FinalYearProject/FluidSimulatorProject/Temp/bin/Debug/Assembly-CSharp.dll
 /Users/Chris/Documents/FinalYearProject/FinalYearProject/FluidSimulatorProject/obj/Debug/Assembly-CSharp.dll
+/Users/Chris/Documents/FinalYearProject/FinalYearProject/FluidSimulatorProject/Temp/bin/Debug/Assembly-CSharp-firstpass.dll
+/Users/Chris/Documents/FinalYearProject/FinalYearProject/FluidSimulatorProject/Temp/bin/Debug/Assembly-CSharp-firstpass.dll.mdb

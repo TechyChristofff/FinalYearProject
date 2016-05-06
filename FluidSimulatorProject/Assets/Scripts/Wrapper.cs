@@ -1,19 +1,86 @@
 ﻿using UnityEngine;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Runtime.InteropServices;
+
+
 
 public class Wrapper : MonoBehaviour {
 
-    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public delegate void MyDelegate(string str);
-    
-    [DllImport("FluidUnityPlugin", SetLastError = true)]
-    public static extern void SetDebugFunction( IntPtr fp );    
-    
     #region Internal Calls
+    #if UNITY_IOS
+    [DllImport("__Internal")]
+    #else
+    [DllImport("FluidUnityPlugin", SetLastError = true)]
+    #endif
+    private static extern bool InitInternalSystem(); //Initialise the system
     
+    
+    #if UNITY_IOS
+    [DllImport("__Internal")]
+    #else
+    [DllImport("FluidUnityPlugin", SetLastError = true)]
+    #endif
+    private static extern void GetInternalPoints(float[,] array, int height, int width, float worldRatio); //Return the point data from the system [Point][x,y,z]
+    
+    #if UNITY_IOS
+    [DllImport("__Internal")]
+    #else
+    [DllImport("FluidUnityPlugin", SetLastError = true)]
+    #endif
+    private static extern void InternalAnimate();//Animate the system
+    
+    #if UNITY_IOS
+    [DllImport("__Internal")]
+    #else
+    [DllImport("FluidUnityPlugin", SetLastError = true)]
+    #endif
+    private static extern void InternalDispose();//Dispose of the system
+    
+    #if UNITY_IOS
+    [DllImport("__Internal")]
+    #else
+    [DllImport("FluidUnityPlugin", SetLastError = true)]
+    #endif
+    private static extern int GetInternalLength();//Get the number of SimulationPoints in the system
+    
+    #if UNITY_IOS
+    [DllImport("__Internal")]
+    #else
+    [DllImport("FluidUnityPlugin", SetLastError = true)]
+    #endif
+    private static extern void InternalStartRunning();//Start the system running/pause the system
+      
+    #if UNITY_IOS
+    [DllImport("__Internal")]
+    #else
+    [DllImport("FluidUnityPlugin", SetLastError = true)]
+    #endif
+    private static extern int InternalRunningState();//Get the running state (0 = paused, 1 = running)
+    
+    #if UNITY_IOS
+    [DllImport("__Internal")]
+    #else
+    [DllImport("FluidUnityPlugin", SetLastError = true)]
+    #endif
+    private static extern float GetInternalPoint(int id, int direction);//Get a specific point (point number, 0=x, 1=Y,2=Z)
+    
+    #if UNITY_IOS
+    [DllImport("__Internal")]
+    #else
+    [DllImport("FluidUnityPlugin", SetLastError = true)]
+    #endif
+    private static extern bool InitVariableSystem(int initialParticles, int maxParticles,float kernelInput, float massInput, float gravX, float gravY, float gravZ, float worldSizeX, 
+    float worldSizeY,float worldSizeZ,float wallDampening,float restDencity,float gasConstant, float viscosityInput, float timeStep, float surfaceNormals, 
+    float surfaceCoeffeciant);
+    
+    #if UNITY_IOS
+    [DllImport("__Internal")]
+    #else
+    [DllImport("FluidUnityPlugin", SetLastError = true)]
+    #endif
+    private static extern void AddParticle(float PosX, float PosY, float PosZ, float VelX, float VelY, float VelZ );
+    
+    /*
     [DllImport("FluidUnityPlugin", SetLastError = true)]
     private static extern bool InitInternalSystem(); //Initialise the system
     
@@ -45,6 +112,48 @@ public class Wrapper : MonoBehaviour {
     
     [DllImport("FluidUnityPlugin", SetLastError = true)]
     private static extern void AddParticle(float PosX, float PosY, float PosZ, float VelX, float VelY, float VelZ );
+    */
+    
+    
+    /*
+    [DllImport("__Internal")]
+    private static extern bool InitInternalSystem(); //Initialise the system
+    
+    [DllImport("__Internal")]
+    private static extern void GetInternalPoints(float[,] array, int height, int width, float worldRatio); //Return the point data from the system [Point][x,y,z]
+    
+    [DllImport("__Internal")]
+    private static extern void InternalAnimate();//Animate the system
+    
+    [DllImport("__Internal")]
+    private static extern void InternalDispose();//Dispose of the system
+    
+    [DllImport("__Internal")]
+    private static extern int GetInternalLength();//Get the number of SimulationPoints in the system
+    
+    [DllImport("__Internal")]
+    private static extern void InternalStartRunning();//Start the system running/pause the system
+      
+    [DllImport("__Internal")]
+    private static extern int InternalRunningState();//Get the running state (0 = paused, 1 = running)
+    
+    [DllImport("__Internal")]
+    private static extern float GetInternalPoint(int id, int direction);//Get a specific point (point number, 0=x, 1=Y,2=Z)
+    
+    [DllImport("__Internal")]
+    private static extern bool InitVariableSystem(int initialParticles, int maxParticles,float kernelInput, float massInput, float gravX, float gravY, float gravZ, float worldSizeX, 
+    float worldSizeY,float worldSizeZ,float wallDampening,float restDencity,float gasConstant, float viscosityInput, float timeStep, float surfaceNormals, 
+    float surfaceCoeffeciant);
+    
+    [DllImport("__Internal")]
+    private static extern void AddParticle(float PosX, float PosY, float PosZ, float VelX, float VelY, float VelZ );
+    */
+   
+    public delegate void MyDelegate(string str);
+    
+    
+    [DllImport("FluidUnityPlugin", SetLastError = true)]
+    public static extern void SetDebugFunction( IntPtr fp );    
     
     #endregion 
     public bool managed;
@@ -75,7 +184,7 @@ public class Wrapper : MonoBehaviour {
         width = 0;
         height = 0;
          
-        InitialiseCallbackSystem();
+        //InitialiseCallbackSystem();
         
         InitiliseSystem();
         

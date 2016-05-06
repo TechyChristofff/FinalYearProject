@@ -4,7 +4,7 @@
  * Seamless support for Microsoft Visual Studio Code in Unity
  *
  * Version:
- *   2.47
+ *   2.6
  *
  * Authors:
  *   Matthew Davey <matthew.davey@dotbunny.com>
@@ -15,7 +15,7 @@ namespace dotBunny.Unity
 {
     using System;
     using System.IO;
-    using System.Text.RegularExpressions; 
+    using System.Text.RegularExpressions;
     using UnityEditor;
     using UnityEngine;
 
@@ -25,7 +25,7 @@ namespace dotBunny.Unity
         /// <summary>
         /// Current Version Number
         /// </summary>
-        public const float Version = 2.47f;
+        public const float Version = 2.6f;
 
         /// <summary>
         /// Current Version Code
@@ -49,7 +49,7 @@ namespace dotBunny.Unity
 #if UNITY_EDITOR_OSX
                 var newPath = "/Applications/Visual Studio Code.app";
 #elif UNITY_EDITOR_WIN
-                var newPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData) + Path.DirectorySeparatorChar + "Code" + Path.DirectorySeparatorChar + "bin" + Path.DirectorySeparatorChar + "code.cmd";
+                var newPath = ProgramFilesx86() + Path.DirectorySeparatorChar + "Microsoft VS Code" + Path.DirectorySeparatorChar + "bin" + Path.DirectorySeparatorChar + "code.cmd";
 #else
                 var newPath = "/usr/local/bin/code";
 #endif                
@@ -60,6 +60,18 @@ namespace dotBunny.Unity
                 EditorPrefs.SetString("VSCode_CodePath", value);
             }
         }
+        
+        static string ProgramFilesx86()
+		{
+			if( 8 == IntPtr.Size 
+				|| (!String.IsNullOrEmpty(Environment.GetEnvironmentVariable("PROCESSOR_ARCHITEW6432"))))
+			{
+				return Environment.GetEnvironmentVariable("ProgramFiles(x86)");
+			}
+
+			return Environment.GetEnvironmentVariable("ProgramFiles");
+		}
+		
         
         /// <summary>
         /// Should debug information be displayed in the Unity terminal?
@@ -695,9 +707,11 @@ namespace dotBunny.Unity
             EditorGUI.BeginChangeCheck();
             
             Enabled = EditorGUILayout.Toggle(new GUIContent("Enable Integration", "Should the integration work its magic for you?"), Enabled);
-            
-            CodePath = EditorGUILayout.DelayedTextField(new GUIContent("VS Code Path", "Full pah to the Micosoft Visual Studio code executable."), CodePath);
-            
+#if UNITY_5_3_OR_NEWER
+            CodePath = EditorGUILayout.DelayedTextField(new GUIContent("VS Code Path", "Full path to the Micosoft Visual Studio code executable."), CodePath);
+#else
+            CodePath = EditorGUILayout.TextField(new GUIContent("VS Code Path", "Full path to the Micosoft Visual Studio code executable."), CodePath);
+#endif
             
             UseUnityDebugger = EditorGUILayout.Toggle(new GUIContent("Use Unity Debugger", "Should the integration integrate with Unity's VSCode Extension (must be installed)."), UseUnityDebugger);
 
@@ -800,7 +814,8 @@ namespace dotBunny.Unity
             // determine asset that has been double clicked in the project view
             UnityEngine.Object selected = EditorUtility.InstanceIDToObject(instanceID);
 
-            if (selected.GetType().ToString() == "UnityEditor.MonoScript")
+            if (selected.GetType().ToString() == "UnityEditor.MonoScript" ||
+                selected.GetType().ToString() == "UnityEngine.Shader")
             {
                 string completeFilepath = appPath + Path.DirectorySeparatorChar + AssetDatabase.GetAssetPath(selected);
 
@@ -1048,12 +1063,12 @@ namespace dotBunny.Unity
                 }
                 EditorPrefs.SetBool("kExternalEditorSupportsUnityProj", false);
 
-                // Attach to Editor
                 if (!EditorPrefs.GetBool("AllowAttachedDebuggingOfEditor", false))
                 {
                     EditorPrefs.SetBool("VSCode_PreviousAttach", false);
                 }
                 EditorPrefs.SetBool("AllowAttachedDebuggingOfEditor", true);
+                
             }
             else
             {
@@ -1082,12 +1097,10 @@ namespace dotBunny.Unity
                     EditorPrefs.SetBool("kExternalEditorSupportsUnityProj", true);
                 }
 
-
-                // Restore previous attach
-                if (!EditorPrefs.GetBool("VSCode_PreviousAttach", true))
-                {
-                    EditorPrefs.SetBool("AllowAttachedDebuggingOfEditor", false);
-                }
+                // Always leave editor attaching on, I know, it solves the problem of needing to restart for this
+                // to actually work
+                EditorPrefs.SetBool("AllowAttachedDebuggingOfEditor", true);
+                
             }
 
             FixUnityPreferences();
