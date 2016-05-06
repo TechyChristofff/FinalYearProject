@@ -14,7 +14,11 @@ extern "C" EXPORT_API void SetDebugFunction( FuncPtr fp )
 
 void SPHSystem::send_callback(std::string message)
 {
+<<<<<<< HEAD
     //Debug(message.c_str());
+=======
+    Debug(message.c_str());
+>>>>>>> e77d3e4a6d8237737733f084b234d7bd3a8fbae3
 }
 
 SPHSystem::SPHSystem()

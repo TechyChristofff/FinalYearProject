@@ -14,7 +14,11 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+<<<<<<< HEAD
 		<key>FluidUnityPluginIos.xcscheme</key>
+=======
+		<key>FluidUnityPluginIOs.xcscheme</key>
+>>>>>>> e77d3e4a6d8237737733f084b234d7bd3a8fbae3
 		<dict>
 			<key>orderHint</key>
 			<integer>2</integer>
