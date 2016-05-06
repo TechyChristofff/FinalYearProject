@@ -1,0 +1,23 @@
+﻿Build started 12/02/2016 15:25:04.
+     1>Project "Y:\Documents\FinalYearProject\FinalYearProject\GLTests\GLTests\GLTests.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IY:\Documents\FinalYearProject\FinalYearProject\GLTests\packages\nupengl.core.0.1.0.1\build\native\../..//build/native/include/ /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\..\sphfluid\SPH_CPU_3D_v1\sph_main.cpp
+         sph_main.cpp
+     1>y:\documents\finalyearproject\sphfluid\sph_cpu_3d_v1\sph_main.cpp(52): warning C4101: 'count' : unreferenced local variable
+     1>y:\documents\finalyearproject\sphfluid\sph_cpu_3d_v1\sph_main.cpp(50): warning C4101: 'fp' : unreferenced local variable
+     1>y:\documents\finalyearproject\sphfluid\sph_cpu_3d_v1\sph_main.cpp(51): warning C4101: 'c' : unreferenced local variable
+     1>y:\documents\finalyearproject\sphfluid\sph_cpu_3d_v1\sph_main.cpp(184): warning C4244: 'argument' : conversion from 'float' to 'GLsizei', possible loss of data
+     1>y:\documents\finalyearproject\sphfluid\sph_cpu_3d_v1\sph_main.cpp(262): warning C4244: '=' : conversion from 'GLint' to 'float', possible loss of data
+     1>y:\documents\finalyearproject\sphfluid\sph_cpu_3d_v1\sph_main.cpp(263): warning C4244: '=' : conversion from 'GLint' to 'float', possible loss of data
+     1>y:\documents\finalyearproject\sphfluid\sph_cpu_3d_v1\sph_main.cpp(354): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"Y:\Documents\FinalYearProject\FinalYearProject\GLTests\Debug\GLTests.exe" /INCREMENTAL /NOLOGO Y:\Documents\FinalYearProject\FinalYearProject\GLTests\packages\nupengl.core.0.1.0.1\build\native\../..//build/native/lib/Win32\glew32.lib Y:\Documents\FinalYearProject\FinalYearProject\GLTests\packages\nupengl.core.0.1.0.1\build\native\../..//build/native/lib/Win32\glfw3dll.lib Y:\Documents\FinalYearProject\FinalYearProject\GLTests\packages\nupengl.core.0.1.0.1\build\native\../..//build/native/lib/Win32\freeglut.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"Y:\Documents\FinalYearProject\FinalYearProject\GLTests\Debug\GLTests.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"Y:\Documents\FinalYearProject\FinalYearProject\GLTests\Debug\GLTests.lib" /MACHINE:X86 Debug\sph_main.obj
+         Debug\sph_system.obj
+         Debug\sph_timer.obj
+         LINK : Y:\Documents\FinalYearProject\FinalYearProject\GLTests\Debug\GLTests.exe not found or not built by the last incremental link; performing full link
+         GLTests.vcxproj -> Y:\Documents\FinalYearProject\FinalYearProject\GLTests\Debug\GLTests.exe
+     1>Done Building Project "Y:\Documents\FinalYearProject\FinalYearProject\GLTests\GLTests\GLTests.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:03.76
