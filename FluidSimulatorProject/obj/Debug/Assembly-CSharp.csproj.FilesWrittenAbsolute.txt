@@ -31,11 +31,6 @@
 /Users/Chris/Documents/FinalYearProject/FinalYearProject/FluidSimulatorProject/Temp/bin/Debug/Assembly-CSharp.dll.mdb
 /Users/Chris/Documents/FinalYearProject/FinalYearProject/FluidSimulatorProject/Temp/bin/Debug/Assembly-CSharp.dll
 /Users/Chris/Documents/FinalYearProject/FinalYearProject/FluidSimulatorProject/obj/Debug/Assembly-CSharp.dll
-/Users/Chris/Documents/FinalYearProject/FinalYearProject/FluidSimulatorProject/obj/Debug/Assembly-CSharp.dll.mdb
-/Users/Chris/Documents/FinalYearProject/FinalYearProject/FluidSimulatorProject/Temp/bin/Debug/UnityEngine.dll
-/Users/Chris/Documents/FinalYearProject/FinalYearProject/FluidSimulatorProject/Temp/bin/Debug/UnityEditor.dll
-/Users/Chris/Documents/FinalYearProject/FinalYearProject/FluidSimulatorProject/Temp/bin/Debug/UnityEngine.UI.dll
-/Users/Chris/Documents/FinalYearProject/FinalYearProject/FluidSimulatorProject/Temp/bin/Debug/UnityEngine.Networking.dll
 >>>>>>> e77d3e4a6d8237737733f084b234d7bd3a8fbae3
 /Users/Chris/Documents/FinalYearProject/FinalYearProject/FluidSimulatorProject/Temp/bin/Debug/Mono.Cecil.dll
 /Users/Chris/Documents/FinalYearProject/FinalYearProject/FluidSimulatorProject/Temp/bin/Debug/Unity.SerializationLogic.dll
@@ -46,11 +41,5 @@
 /Users/Chris/Documents/FinalYearProject/FinalYearProject/FluidSimulatorProject/Temp/bin/Debug/Unity.CecilTools.dll
 /Users/Chris/Documents/FinalYearProject/FinalYearProject/FluidSimulatorProject/Temp/bin/Debug/Mono.Cecil.Pdb.dll
 /Users/Chris/Documents/FinalYearProject/FinalYearProject/FluidSimulatorProject/Temp/bin/Debug/Mono.Cecil.Mdb.dll
-<<<<<<< HEAD
-/Users/Chris/Documents/FinalYearProject/FinalYearProject/FluidSimulatorProject/Temp/bin/Debug/Assembly-CSharp.dll.mdb
-/Users/Chris/Documents/FinalYearProject/FinalYearProject/FluidSimulatorProject/Temp/bin/Debug/Assembly-CSharp.dll
-/Users/Chris/Documents/FinalYearProject/FinalYearProject/FluidSimulatorProject/obj/Debug/Assembly-CSharp.dll
-=======
->>>>>>> e77d3e4a6d8237737733f084b234d7bd3a8fbae3
 /Users/Chris/Documents/FinalYearProject/FinalYearProject/FluidSimulatorProject/Temp/bin/Debug/Assembly-CSharp-firstpass.dll
 /Users/Chris/Documents/FinalYearProject/FinalYearProject/FluidSimulatorProject/Temp/bin/Debug/Assembly-CSharp-firstpass.dll.mdb

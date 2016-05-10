@@ -7,33 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-<<<<<<< HEAD
-		836C6F701C490CDF00D6FF46 /* SPH_Controller.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 836C6F661C490CDF00D6FF46 /* SPH_Controller.cpp */; };
-=======
-		836C6F701C490CDF00D6FF46 /* Main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 836C6F661C490CDF00D6FF46 /* Main.cpp */; };
->>>>>>> e77d3e4a6d8237737733f084b234d7bd3a8fbae3
-		838F2D6B1C5AA1EE00ADFA35 /* sph_system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 838F2D6A1C5AA1EE00ADFA35 /* sph_system.cpp */; };
+		83581FCF1CDE407400A60358 /* SPH_Controller.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 83581FC81CDE407400A60358 /* SPH_Controller.cpp */; };
+		83581FD01CDE407400A60358 /* sph_system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 83581FCC1CDE407400A60358 /* sph_system.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		831C404F1C20567E003B6B6C /* FluidUnityPlugin.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FluidUnityPlugin.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		831C40521C20567E003B6B6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-<<<<<<< HEAD
-		836C6F661C490CDF00D6FF46 /* SPH_Controller.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SPH_Controller.cpp; sourceTree = "<group>"; };
-		836C6F671C490CDF00D6FF46 /* SPH_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPH_Controller.h; sourceTree = "<group>"; };
-=======
-		836C6F661C490CDF00D6FF46 /* Main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Main.cpp; sourceTree = "<group>"; };
-		836C6F671C490CDF00D6FF46 /* Main.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Main.h; sourceTree = "<group>"; };
->>>>>>> e77d3e4a6d8237737733f084b234d7bd3a8fbae3
-		836C6F681C490CDF00D6FF46 /* sph_data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sph_data.h; sourceTree = "<group>"; };
-		836C6F691C490CDF00D6FF46 /* sph_header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sph_header.h; sourceTree = "<group>"; };
-		836C6F6C1C490CDF00D6FF46 /* sph_system.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sph_system.h; sourceTree = "<group>"; };
-		836C6F6F1C490CDF00D6FF46 /* sph_type.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sph_type.h; sourceTree = "<group>"; };
-		838F2D6A1C5AA1EE00ADFA35 /* sph_system.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sph_system.cpp; sourceTree = "<group>"; };
+		83581FA41CDE373400A60358 /* FluidUnityPlugin.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FluidUnityPlugin.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		83581FA71CDE373400A60358 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83581FC81CDE407400A60358 /* SPH_Controller.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SPH_Controller.cpp; path = Src/SPH_Controller.cpp; sourceTree = "<group>"; };
+		83581FC91CDE407400A60358 /* SPH_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPH_Controller.h; path = Src/SPH_Controller.h; sourceTree = "<group>"; };
+		83581FCA1CDE407400A60358 /* sph_data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sph_data.h; path = Src/sph_data.h; sourceTree = "<group>"; };
+		83581FCB1CDE407400A60358 /* sph_header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sph_header.h; path = Src/sph_header.h; sourceTree = "<group>"; };
+		83581FCC1CDE407400A60358 /* sph_system.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = sph_system.cpp; path = Src/sph_system.cpp; sourceTree = "<group>"; };
+		83581FCD1CDE407400A60358 /* sph_system.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sph_system.h; path = Src/sph_system.h; sourceTree = "<group>"; };
+		83581FCE1CDE407400A60358 /* sph_type.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sph_type.h; path = Src/sph_type.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		831C404C1C20567E003B6B6C /* Frameworks */ = {
+		83581FA11CDE373400A60358 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -43,60 +34,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		831C40461C20567E003B6B6C = {
+		83581F9B1CDE373400A60358 = {
 			isa = PBXGroup;
 			children = (
-				831C40511C20567E003B6B6C /* FluidUnityPlugin */,
-				831C40501C20567E003B6B6C /* Products */,
+				83581FA61CDE373400A60358 /* FluidUnityPlugin */,
+				83581FA51CDE373400A60358 /* Products */,
+				83581FC81CDE407400A60358 /* SPH_Controller.cpp */,
+				83581FC91CDE407400A60358 /* SPH_Controller.h */,
+				83581FCA1CDE407400A60358 /* sph_data.h */,
+				83581FCB1CDE407400A60358 /* sph_header.h */,
+				83581FCC1CDE407400A60358 /* sph_system.cpp */,
+				83581FCD1CDE407400A60358 /* sph_system.h */,
+				83581FCE1CDE407400A60358 /* sph_type.h */,
 			);
 			sourceTree = "<group>";
 		};
-		831C40501C20567E003B6B6C /* Products */ = {
+		83581FA51CDE373400A60358 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				831C404F1C20567E003B6B6C /* FluidUnityPlugin.bundle */,
+				83581FA41CDE373400A60358 /* FluidUnityPlugin.bundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		831C40511C20567E003B6B6C /* FluidUnityPlugin */ = {
+		83581FA61CDE373400A60358 /* FluidUnityPlugin */ = {
 			isa = PBXGroup;
 			children = (
-				838F2D6A1C5AA1EE00ADFA35 /* sph_system.cpp */,
-<<<<<<< HEAD
-				836C6F661C490CDF00D6FF46 /* SPH_Controller.cpp */,
-				836C6F671C490CDF00D6FF46 /* SPH_Controller.h */,
-=======
-				836C6F661C490CDF00D6FF46 /* Main.cpp */,
-				836C6F671C490CDF00D6FF46 /* Main.h */,
->>>>>>> e77d3e4a6d8237737733f084b234d7bd3a8fbae3
-				836C6F681C490CDF00D6FF46 /* sph_data.h */,
-				836C6F691C490CDF00D6FF46 /* sph_header.h */,
-				836C6F6C1C490CDF00D6FF46 /* sph_system.h */,
-				836C6F6F1C490CDF00D6FF46 /* sph_type.h */,
-				831C405B1C2056C0003B6B6C /* Supporting Files */,
+				83581FA71CDE373400A60358 /* Info.plist */,
 			);
 			path = FluidUnityPlugin;
-			sourceTree = "<group>";
-		};
-		831C405B1C2056C0003B6B6C /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				831C40521C20567E003B6B6C /* Info.plist */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		831C404E1C20567E003B6B6C /* FluidUnityPlugin */ = {
+		83581FA31CDE373400A60358 /* FluidUnityPlugin */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 831C40551C20567E003B6B6C /* Build configuration list for PBXNativeTarget "FluidUnityPlugin" */;
+			buildConfigurationList = 83581FAA1CDE373400A60358 /* Build configuration list for PBXNativeTarget "FluidUnityPlugin" */;
 			buildPhases = (
-				831C404B1C20567E003B6B6C /* Sources */,
-				831C404C1C20567E003B6B6C /* Frameworks */,
-				831C404D1C20567E003B6B6C /* Resources */,
+				83581FA01CDE373400A60358 /* Sources */,
+				83581FA11CDE373400A60358 /* Frameworks */,
+				83581FA21CDE373400A60358 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -104,42 +82,42 @@
 			);
 			name = FluidUnityPlugin;
 			productName = FluidUnityPlugin;
-			productReference = 831C404F1C20567E003B6B6C /* FluidUnityPlugin.bundle */;
+			productReference = 83581FA41CDE373400A60358 /* FluidUnityPlugin.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		831C40471C20567E003B6B6C /* Project object */ = {
+		83581F9C1CDE373400A60358 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Chris Smith";
 				TargetAttributes = {
-					831C404E1C20567E003B6B6C = {
-						CreatedOnToolsVersion = 7.2;
+					83581FA31CDE373400A60358 = {
+						CreatedOnToolsVersion = 7.3.1;
 					};
 				};
 			};
-			buildConfigurationList = 831C404A1C20567E003B6B6C /* Build configuration list for PBXProject "FluidUnityPlugin" */;
+			buildConfigurationList = 83581F9F1CDE373400A60358 /* Build configuration list for PBXProject "FluidUnityPlugin" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 831C40461C20567E003B6B6C;
-			productRefGroup = 831C40501C20567E003B6B6C /* Products */;
+			mainGroup = 83581F9B1CDE373400A60358;
+			productRefGroup = 83581FA51CDE373400A60358 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				831C404E1C20567E003B6B6C /* FluidUnityPlugin */,
+				83581FA31CDE373400A60358 /* FluidUnityPlugin */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		831C404D1C20567E003B6B6C /* Resources */ = {
+		83581FA21CDE373400A60358 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -149,26 +127,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		831C404B1C20567E003B6B6C /* Sources */ = {
+		83581FA01CDE373400A60358 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				838F2D6B1C5AA1EE00ADFA35 /* sph_system.cpp in Sources */,
-<<<<<<< HEAD
-				836C6F701C490CDF00D6FF46 /* SPH_Controller.cpp in Sources */,
-=======
-				836C6F701C490CDF00D6FF46 /* Main.cpp in Sources */,
->>>>>>> e77d3e4a6d8237737733f084b234d7bd3a8fbae3
+				83581FD01CDE407400A60358 /* sph_system.cpp in Sources */,
+				83581FCF1CDE407400A60358 /* SPH_Controller.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		831C40531C20567E003B6B6C /* Debug */ = {
+		83581FA81CDE373400A60358 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -208,10 +183,11 @@
 			};
 			name = Debug;
 		};
-		831C40541C20567E003B6B6C /* Release */ = {
+		83581FA91CDE373400A60358 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -244,48 +220,28 @@
 			};
 			name = Release;
 		};
-		831C40561C20567E003B6B6C /* Debug */ = {
+		83581FAB1CDE373400A60358 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = FluidUnityPlugin/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
-<<<<<<< HEAD
-=======
-				ONLY_ACTIVE_ARCH = YES;
->>>>>>> e77d3e4a6d8237737733f084b234d7bd3a8fbae3
 				PRODUCT_BUNDLE_IDENTIFIER = thetecheffect.FluidUnityPlugin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx10.11;
 				SKIP_INSTALL = YES;
-<<<<<<< HEAD
-=======
-				SUPPORTED_PLATFORMS = macosx;
->>>>>>> e77d3e4a6d8237737733f084b234d7bd3a8fbae3
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Debug;
 		};
-		831C40571C20567E003B6B6C /* Release */ = {
+		83581FAC1CDE373400A60358 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = FluidUnityPlugin/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
-				MTL_ENABLE_DEBUG_INFO = NO;
-<<<<<<< HEAD
-				ONLY_ACTIVE_ARCH = YES;
-=======
-				ONLY_ACTIVE_ARCH = NO;
->>>>>>> e77d3e4a6d8237737733f084b234d7bd3a8fbae3
 				PRODUCT_BUNDLE_IDENTIFIER = thetecheffect.FluidUnityPlugin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx10.11;
 				SKIP_INSTALL = YES;
-<<<<<<< HEAD
-=======
-				SUPPORTED_PLATFORMS = macosx;
->>>>>>> e77d3e4a6d8237737733f084b234d7bd3a8fbae3
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
@@ -293,25 +249,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		831C404A1C20567E003B6B6C /* Build configuration list for PBXProject "FluidUnityPlugin" */ = {
+		83581F9F1CDE373400A60358 /* Build configuration list for PBXProject "FluidUnityPlugin" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				831C40531C20567E003B6B6C /* Debug */,
-				831C40541C20567E003B6B6C /* Release */,
+				83581FA81CDE373400A60358 /* Debug */,
+				83581FA91CDE373400A60358 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		831C40551C20567E003B6B6C /* Build configuration list for PBXNativeTarget "FluidUnityPlugin" */ = {
+		83581FAA1CDE373400A60358 /* Build configuration list for PBXNativeTarget "FluidUnityPlugin" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				831C40561C20567E003B6B6C /* Debug */,
-				831C40571C20567E003B6B6C /* Release */,
+				83581FAB1CDE373400A60358 /* Debug */,
+				83581FAC1CDE373400A60358 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 831C40471C20567E003B6B6C /* Project object */;
+	rootObject = 83581F9C1CDE373400A60358 /* Project object */;
 }
