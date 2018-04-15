@@ -31,6 +31,8 @@ public class Testing : MonoBehaviour {
 	float testTime = 0;
 	
 	float FPS;
+
+	public GameObject[] cameras;
 	
 	// Use this for initialization
 	void Start () {
@@ -125,6 +127,18 @@ public class Testing : MonoBehaviour {
 			}
 			
 			Pause.SetActive(true);
+		}
+	}
+
+	public void SetCameraNumber(int cam)
+	{
+		if(cameras.Length > cam)
+		{
+			foreach(GameObject camera in cameras)
+			{
+				camera.SetActive(false);
+			}
+			cameras[cam].SetActive(true);
 		}
 	}
 	

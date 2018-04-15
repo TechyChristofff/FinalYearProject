@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
-using System.Collections;
  
 public class ParticleWaves : MonoBehaviour {
  
-        public ParticleSystem particleSystem;
+        public ParticleSystem particlesSystem;
         private ParticleSystem.Particle[] particlesArray;
         public Gradient colorGradient;
         public int seaResolution = 50;
@@ -14,9 +13,10 @@ public class ParticleWaves : MonoBehaviour {
         private float perlinNoiseAnimY = 0.01f;
         void Start() {
                 particlesArray = new ParticleSystem.Particle[seaResolution * seaResolution];
-                particleSystem.maxParticles = seaResolution * seaResolution;
-                particleSystem.Emit(seaResolution * seaResolution);
-                particleSystem.GetParticles(particlesArray);
+                
+                particlesSystem.maxParticles = seaResolution * seaResolution;
+                particlesSystem.Emit(seaResolution * seaResolution);
+                particlesSystem.GetParticles(particlesArray);
         }
         void Update() {
                 for(int i = 0; i < seaResolution; i++) {
@@ -30,7 +30,7 @@ public class ParticleWaves : MonoBehaviour {
                 perlinNoiseAnimX += 0.01f;
                 perlinNoiseAnimY += 0.01f;
  
-                particleSystem.SetParticles(particlesArray, particlesArray.Length);
+                particlesSystem.SetParticles(particlesArray, particlesArray.Length);
         }
  
 }

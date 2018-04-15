@@ -8,6 +8,81 @@ public class Wrapper : MonoBehaviour {
     
     #if UNITY_IOS
     [DllImport("__Internal")]
+    #else
+    [DllImport("FluidUnityPlugin", SetLastError = true)]
+    #endif
+    private static extern bool InitInternalSystem(); //Initialise the system
+    
+    
+	#if UNITY_IOS
+	[DllImport("__Internal")]
+	#else
+	[DllImport("FluidUnityPlugin", SetLastError = true)]
+	#endif
+    private static extern void GetInternalPoints(float[,] array, int height, int width, float worldRatio); //Return the point data from the system [Point][x,y,z]
+    
+	#if UNITY_IOS
+	[DllImport("__Internal")]
+	#else
+	[DllImport("FluidUnityPlugin", SetLastError = true)]
+	#endif
+    private static extern void InternalAnimate();//Animate the system
+    
+	#if UNITY_IOS
+	[DllImport("__Internal")]
+	#else
+	[DllImport("FluidUnityPlugin", SetLastError = true)]
+	#endif
+    private static extern void InternalDispose();//Dispose of the system
+    
+	#if UNITY_IOS
+	[DllImport("__Internal")]
+	#else
+	[DllImport("FluidUnityPlugin", SetLastError = true)]
+	#endif
+    private static extern int GetInternalLength();//Get the number of SimulationPoints in the system
+    
+	#if UNITY_IOS
+	[DllImport("__Internal")]
+	#else
+	[DllImport("FluidUnityPlugin", SetLastError = true)]
+	#endif
+    private static extern void InternalStartRunning();//Start the system running/pause the system
+      
+	#if UNITY_IOS
+	[DllImport("__Internal")]
+	#else
+	[DllImport("FluidUnityPlugin", SetLastError = true)]
+	#endif
+    private static extern int InternalRunningState();//Get the running state (0 = paused, 1 = running)
+    
+	#if UNITY_IOS
+	[DllImport("__Internal")]
+	#else
+	[DllImport("FluidUnityPlugin", SetLastError = true)]
+	#endif
+    private static extern float GetInternalPoint(int id, int direction);//Get a specific point (point number, 0=x, 1=Y,2=Z)
+    
+	#if UNITY_IOS
+	[DllImport("__Internal")]
+	#else
+	[DllImport("FluidUnityPlugin", SetLastError = true)]
+	#endif
+    private static extern bool InitVariableSystem(int initialParticles, int maxParticles,float kernelInput, float massInput, float gravX, float gravY, float gravZ, float worldSizeX, 
+    float worldSizeY,float worldSizeZ,float wallDampening,float restDencity,float gasConstant, float viscosityInput, float timeStep, float surfaceNormals, 
+    float surfaceCoeffeciant);
+    
+	#if UNITY_IOS
+	[DllImport("__Internal")]
+	#else
+	[DllImport("FluidUnityPlugin", SetLastError = true)]
+	#endif
+    private static extern void AddParticle(float PosX, float PosY, float PosZ, float VelX, float VelY, float VelZ );
+    
+    /*
+    
+    #if UNITY_IOS
+    [DllImport("__Internal")]
 	#elif UNITY_EDITOR_WIN || UNITY_STANDALONE_WIN
 	[DllImport("WinFluidPluginl")]
     #else
@@ -98,6 +173,7 @@ public class Wrapper : MonoBehaviour {
 	[DllImport("FluidUnityPlugin", SetLastError = true)]
 	#endif
     private static extern void AddParticle(float PosX, float PosY, float PosZ, float VelX, float VelY, float VelZ );
+    */
    
     public delegate void MyDelegate(string str);
     

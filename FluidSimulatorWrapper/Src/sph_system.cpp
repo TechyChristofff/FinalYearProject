@@ -558,7 +558,8 @@ inline int3 SPHSystem::calc_cell_pos(float3 p)
 
 inline uint SPHSystem::calc_cell_hash(int3 cell_pos)
 {
-	if(cell_pos.x<0 || cell_pos.x>=(int)grid_size.x || cell_pos.y<0 || cell_pos.y>=(int)grid_size.y || cell_pos.z<0 || cell_pos.z>=(int)grid_size.z)
+	if(cell_pos.x<0 || cell_pos.x>=(int)grid_size.x || cell_pos.y<0 ||
+       cell_pos.y>=(int)grid_size.y || cell_pos.z<0 || cell_pos.z>=(int)grid_size.z)
 	{
 		return (uint)0xffffffff;
 	}
@@ -567,7 +568,8 @@ inline uint SPHSystem::calc_cell_hash(int3 cell_pos)
     cell_pos.y = cell_pos.y & (grid_size.y-1);  
 	cell_pos.z = cell_pos.z & (grid_size.z-1);  
 
-	return ((uint)(cell_pos.z))*grid_size.y*grid_size.x + ((uint)(cell_pos.y))*grid_size.x + (uint)(cell_pos.x);
+	return ((uint)(cell_pos.z))*grid_size.y*grid_size.x +
+    ((uint)(cell_pos.y))*grid_size.x + (uint)(cell_pos.x);
 }
 
 std::string SPHSystem::float_conversion(float input)
